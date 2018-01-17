@@ -29,9 +29,27 @@
   and $\frac{1 + \theta}{1 + \theta + \theta^2}$ in $\mathbb{Q}(\theta)$.
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+By the rational roots theorem if rational roots for $x^3+3x+1$ exist
+then they must be of the form $\pm 1$. However neither of those are
+roots. Thus $x^3+3x+1$ is irreducible over $\bb{Q}$.
+
+Let $\theta\in\bb{C}$ be a root of $x^3+3x+1$.
+Then for the expression $(1+\theta)(1+\theta+\theta^2)$ we have:
+\begin{align*}
+  (1+\theta)(1+\theta+\theta^2) &= 1+2\theta+2\theta^2+\theta^3\\
+                &= 2\theta^2-\theta +1+3\theta+\theta^3\\
+                &= 2\theta^2-\theta\\
+\end{align*}
+
+For the next expression, $\frac{1+\theta}{1+\theta+\theta^2}$, the multiplicative inverse
+of the bottom $1+\theta+\theta^2$ is $\frac{3}{7}\theta^2-\frac{2}{7}\theta+\frac{8}{7}$. This
+can be found be multiplying $1+\theta+\theta^2$ by $(c+b\theta+c\theta^2)$ and extracting a system
+of linear equations. Then we have:
+\begin{align*}
+  \frac{1+\theta}{1+\theta+\theta^2} &= (1+\theta)\left(\frac{3}{7}\theta^2-\frac{2}{7}\theta+\frac{8}{7}\right)\\
+                     &= \frac{3}{7} \theta^{3} + \frac{1}{7} \theta^{2} + \frac{6}{7} \theta + \frac{8}{7}\\
+                     &= \frac{1}{7} \theta^{2} - \frac{3}{7} \theta + \frac{5}{7}
+\end{align*}
 
 \sk
 
@@ -41,11 +59,40 @@
   and compute $[\mathbb{Q}[w]:\mathbb{Q}]$.
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+Begin with the polynomial $x^{12}-1$ which we now that $\omega$ is a root of. This
+factors as
+\[ x^{12}-1=(x^6-1)(x^6+1) \]
+Since $\omega$ of $x^6+1$ and not the other we continue with it. This factors as
+\[ x^6+1=(x^2+1)(x^4-x^2+1)\]
+As before $x^4-x^2+1$ has $\omega$ as a root and the other does not.
+Now we will show that $x^4-x^2+1$ is irreducible.
 
-\sk
+By the rational root theorem the only possible rational roots are $\pm 1$.
+However neither of these are roots. The only way $x^4-x^2+1$ would not
+be irreducible is if it were the product of quadratics. Now consider
+$x^4-x+1$ as a polynomial with integer coefficients and suppose that
+
+\[x^4-x^2+1 = (ax^2+bx+c)(dx^2+ex+f)=adx^4+(bd+ae)x^3+(af+be+cd)x^2+(bf+ce)x+fc\]
+
+where $a,b,c,d,e\in\bb{Z}$. This gives us the following system of equations:
+\begin{align*}
+  ad &=1\\
+  bd+ae &= 0\\
+  af+dc+be &= -1\\
+  bf+ce &=0 \\
+  fc &= 1\\
+\end{align*}
+
+Consider these equations as polynomials in $\bb{C}[a,b,c,d,e,f]$. Then
+consider the ideal
+\[ \langle ad-1,bd+ae,af+dc+be+1,bf+ce,fc-1\rangle \]
+The Gr\"obner basis for this ideal is $\langle 1\rangle$. Since we are in an algebraically
+closed field there are no solutions to a set of polynomial equations when
+the ideal is the whole ring. Thus $x^4-x^2+1$ is not the product of quadratics
+and as such $x^4-x^2+1$ is irreducible.
+
+Therefore $x^4-x^2+1$ is the minimal polynomial $m_{\omega,\bb{Q}}(x)$ and as such
+$[\bb{Q}[\omega]:\bb{Q}]=4$.
 
 \begin{problem}
   Compute the minimal polynomial $m_{\alpha,F}(x)$ where
@@ -55,9 +102,12 @@
   \hspace{1cm} (d) $\mathbb{Q}[\sqrt{15}]$.
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+\begin{enumerate}
+\item[(a)]
+\item[(b)]
+\item[(c)]
+\item[(d)]
+\end{enumerate}
 
 \sk
 
@@ -66,9 +116,52 @@
   where $\alpha = \sqrt{2} + \sqrt[3]{5}$.
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+Consider the polynomial $f(x)=x^{6} - 6 x^{4} - 10 x^{3} + 12 x^{2} - 60 x + 17$. Then $f(\alpha)=0$.
+Now we wish to show that $f(x)$ is irreducible. By the rational roots theorem
+if any rational roots exist then they will be of the form $\pm 17$ neither of which are
+roots. Therefore if $f(x)$ is reducible it will either be the product of two cubics or
+the product of a quartic and a quadratic.
+
+Suppose that $f(x)$ was the product of two cubics. Then we would have
+\[ x^{6} - 6 x^{4} - 10 x^{3} + 12 x^{2} - 60 x + 17 = (x^3+ax^2+bx+c)(x^3+dx^2+ex+f) \]
+If we multiply out the latter terms we can extract the system of equations
+\begin{align*}
+  a+d &=0\\
+  ad+b+e +6 &= 0\\
+  ad+be+c+f+10&= 0\\
+  af+eb+cd-12&= 0\\
+  bf+ec+60&= 0\\
+  cf - 17 &= 0\\
+\end{align*}
+
+If we consider the ideal
+\[\langle a+d,,ad+b+e,ad+be+c+f+10,af+eb+cd-12,bf+ec+60,cf-17\rangle\subset \bb{C}[a,b,c,d,e,f]\]
+the Gr\"obner basis of this ideal is $\langle 1\rangle$ which implies that there are no solutions
+to the equation. Thus $f(x)$ cannot be the product of two cubics.
+
+Similarly suppose that $f(x)$ was the product of a quartic and a quadratic.
+Then
+\[ x^{6} - 6 x^{4} - 10 x^{3} + 12 x^{2} - 60 x + 17 = (x^4+ax^3+bx^2+cx+d)(x^2+ex+f)\]
+  \[=x^{6} + \left(a + e\right) x^{5} + \left(a e + b + f\right) x^{4} + \left(b e + a f + c\right) x^{3} + \left(c e + b f + d\right) x^{2} + \left(d e + c f\right) x + d f \]
+
+This gives us the system of equations
+\begin{align*}
+  a+e&= 0\\
+  ae+b+f+6&= 0\\
+  be+af+c+10&= 0\\
+  ce+bf+d-12&= 0\\
+  de+cf+60&= 0\\
+  df -17&= 0\\
+\end{align*}
+
+As before consider the ideal
+\[ \langle d f - 17, d e + c f + 60, c e + b f + d - 12, b e + a f + c + 10, a e + b + f + 6\rangle
+  \subset \bb{C}[a,b,c,d,e,f] \]
+
+The Gr\"obner basis for this ideal is $\langle 1\rangle$ which implies that there are no solutions.
+Therefore $f(x)$ cannot be expressed as the product of a quartic and a quadratic.
+
+Therefore $f(x)$ is irreducible and as such is in fact the minimal polynomial for $\alpha$.
 
 \sk
 
