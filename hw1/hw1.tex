@@ -111,6 +111,22 @@ $[\bb{Q}[\omega]:\bb{Q}]=4$.
 \item[(d)] The minimal polynomial will be $x^4-14x^2+9$ as well. The
   fact that it is irreducible will follow from it being irreducible over
   $\bb{Q}$ if $\sqrt{15}$ is not in the span of $\{1,\alpha\}$.
+
+  To show this suppose that 
+  \[ \sqrt{15} = a +b\sqrt{2}+c\sqrt{5}+d\sqrt{10} \]
+  If we square both sides we get
+  \[15 = a^2 + 2\sqrt{2} a b + 2\sqrt{5} a c + 2\sqrt{10} a d
+    + 2 b^2 + 2\sqrt{10} b c + 4\sqrt{5} b d + 5 c^2 + 10\sqrt{2} c d + 10 d^2 \]
+
+  This gives us the system of equations
+  \begin{align*}
+    a^2+2b^2+5c^2+10d^2-15 &= 0\\
+    2ab+10cd &= 0\\
+    2ac+4bd &= 0\\
+    2ad+2bc &= 0\\
+  \end{align*}
+
+  \textbf{Say why this has no solutions over $\bb{Q}$}
 \end{enumerate}
 
 \sk
@@ -177,8 +193,21 @@ Therefore $f(x)$ is irreducible and as such is in fact the minimal polynomial fo
 \end{problem}
 
 \begin{proof}
-  
+  First note that $F\subset F(\alpha^2)\subset F(\alpha)$ as $\alpha^2\in F(\alpha)$. Then using the tower theorem
+  we know that
+  \[ [F(\alpha):F] = [F(\alpha):F(\alpha^2)][F(\alpha^2):F(\alpha)] \]
+  By assumption we know that $[F(\alpha):F]$ is odd. Moreover we have that
+  $[F(\alpha):F(\alpha^2)]=[F(\alpha^2)(\alpha):F(\alpha^2)]$. The degree $[F(\alpha^2)(\alpha):F(\alpha^2)]$ will be
+  less than or equal to 2 since $x^2-\alpha^2$ has $\alpha$ as root. However it cannot
+  be 2 since this would contradict $[F(\alpha):F]$ being odd. As such the
+  minimal polynomial for $F(\alpha)$ over $F(\alpha^2)$ must be linear, which implies
+  that $\alpha\in F(\alpha^2)$ and therefore $F(\alpha)=F(\alpha^2)$.
 \end{proof}
+
+The condition is not necessary. Consider the polynomial
+\[(x-e^{2\pi i/3})(x-e^{4\pi i/3})=x^2+x+1\]
+Note that both roots are squares of each other making their extensions equal.
+However $x^2+x+1$ is irreducible making the degree even.
 
 \sk
 
@@ -190,12 +219,27 @@ Therefore $f(x)$ is irreducible and as such is in fact the minimal polynomial fo
 \end{problem}
 
 \begin{proof}
-  
+  As $R$ is a subring of the field $K$ we know that it fulfills all the
+  properties of a field except possibly multiplicative inverses. Let
+  $r\in R$. Since $K$ is algebraic over $F$ there is an irreducible
+  polynomial $f(x)=\sum_0^na_ix^i$ where $r$ is a root of $f(x)$. Consider
+  \[f(r)=\sum_0^na_ir^i=0 \]
+  The constant term will be nonzero as $f$ is irreducible. As such
+  move $a_0$ to the right and factor to get
+  \[r\sum_1^na_ir^{i-1} = -a_0\]
+  Since $-a_0\in F$ it has an inverse. Thus
+  \[r\cdot\frac{1}{-a_0}\sum_1^na_ir^{i-1}=1 \]
+  and $\frac{1}{-a_0}\sum_1^na_ir^{i-1}$ is the multiplicative inverse to $r$.
+  This implies that $R$ must be a field.
+
+  Since finite dimensional field extension are algebraic it follows that any
+  subring of a finite dimensional field extension $K/f$ containing $F$ is a
+  subfield.
 \end{proof}
 
 \sk
 
-\begin{problem}{7}
+\begin{problem}
   Suppose that $K = F(\alpha)$ is a finite simple extension of the field $F$.
   Define an $F$-linear transformation
   $T_\alpha: K \to K$ by $T_\alpha (\beta) = \alpha\beta$ for all $\beta \in K$.
@@ -207,7 +251,38 @@ Therefore $f(x)$ is irreducible and as such is in fact the minimal polynomial fo
 \end{problem}
 
 \begin{proof}
-  
+  First let $n:=[F(\alpha):F]$ and let $\sum_0^nr_ix_i$ be the minimal polynomial for
+  $F(\alpha)$. Let $\beta=\sum_0^{n-1}c_i\alpha^i\in F(\alpha)$ where $c_i\in F$. Then
+  \[T_\alpha(\beta)=\sum_0^{n-1}c_i\alpha^{i+1} \]
+  Using minimal polynomial to remove the $\alpha^n$ we can simplify the expression to
+  \[ T_\alpha(\beta)=\sum_0^{n-2}(c_i-c_{n-1}r_{i+1})\alpha^{i+1}-c_{n-1}r_0 \]
+  which gives us that the matrix for $T_\alpha$ is
+  \[
+    [T_\alpha]=
+    \left(
+      \begin{array}{ccccc}
+        0&0&\cdots&0&-r_0\\
+        1&0&\cdots&0&-r_1\\
+        0&1&\cdots&0&-r_2\\
+        \vdots&\vdots&\ddots&\vdots&\vdots\\
+        0&0&0&1&-r_{n-1}\\
+      \end{array}
+    \right)
+  \]
+
+  Now we take the determinant of the matrix
+  \[
+    xI-[T_\alpha] =
+    \left(
+      \begin{array}{ccccc}
+        x&0&\cdots&0&-r_0\\
+        1&x&\cdots&0&-r_1\\
+        0&1&\cdots&0&-r_2\\
+        \vdots&\vdots&\ddots&\vdots&\vdots\\
+        0&0&0&1&x-r_{n-1}\\
+      \end{array}
+    \right)
+  \]
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
