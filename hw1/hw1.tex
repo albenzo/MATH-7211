@@ -102,12 +102,29 @@ $[\bb{Q}[\omega]:\bb{Q}]=4$.
   \hspace{1cm} (d) $\mathbb{Q}[\sqrt{15}]$.
 \end{problem}
 
+First note that $\bb{Q}[\alpha]\cong\bb{Q}[\sqrt{2},\sqrt{5}]$ as the latter has a
+basis of $(1,\sqrt{2},\sqrt{5},\sqrt{10})$ and we can construct this basis
+in $\bb{Q}[\alpha]$. To see this we can construct $\bb{Q}[\sqrt{5}]$ by
+\[ \sqrt{2}=\frac{(\alpha^2-7)\alpha-2\alpha}{8}\]
+Then we can readily construct the rest.
+
 \begin{enumerate}
-\item[(a)] The minimal polynomial is $x^4-14x^2+9$. To show that it is irreducible
-\item[(b)] The minimal polynomial is $x^2-\sqrt{5}x+2$. To show that it
-  is irreducible
+\item[(a)] The minimal polynomial is $x^4-14x^2+9$. The fact that this is irreducible
+  follows from the tower theorem as $[\bb{Q}[\sqrt{5}]:\bb{Q}]=2$ and
+  $[\bb{Q}[\sqrt{5}][\sqrt{2}]:\bb{Q}[\sqrt{5}]]=2$ giving us that
+  $[\bb{Q}[\sqrt{5}][\sqrt{2}]:\bb{Q}]=4$. Since we have found a fourth
+  degree polynomial that has $\alpha$ as a root we are done.
+\item[(b)] The minimal polynomial is $x^2-\sqrt{5}x+2$. As above the irreducibility
+  follows from the degree of the extension being two and us finding a polynomial
+  with $\alpha$ as a root.
 \item[(c)] The minimal polynomial is $x^2-(7+\sqrt{10})$. To show that
-  it is irreducible
+  it is irreducible note that $\bb{Q}[\sqrt{10}][\alpha]=\bb{Q}[\sqrt{2},\sqrt{5}]$ because
+  as above we have
+  \[ \sqrt{2} = \frac{\sqrt{10}\alpha-2\alpha}{8} \]
+  By the tower theorem the degree $[\bb{Q}[\sqrt{10}]:\bb{Q}]=2$ as it cannot 1 nor can it
+  be 4 as that would imply that $[\bb{Q}[\sqrt{10}][\alpha]:\bb{Q}[\sqrt{10}]]=1$. However since
+  $\sqrt{2}\notin\bb{Q}[\sqrt{10}]$ this cannot occur. Thus the degree must be two and since
+  we have found a polynomial that has degree 2 with $\alpha$ as a root it must be our minimal polynomial.
 \item[(d)] The minimal polynomial will be $x^4-14x^2+9$ as well. The
   fact that it is irreducible will follow from it being irreducible over
   $\bb{Q}$ if $\sqrt{15}$ is not in the span of $\{1,\alpha\}$.
@@ -126,7 +143,10 @@ $[\bb{Q}[\omega]:\bb{Q}]=4$.
     2ad+2bc &= 0\\
   \end{align*}
 
-  \textbf{Say why this has no solutions over $\bb{Q}$}
+  This system of equations has no solution over $\bb{Q}$. Thus the degree of
+  the extension $\bb{Q}[\sqrt{15}]$ by $\alpha$ is the same as $[\bb{Q}[\alpha]:\bb{Q}]=4$.
+  Since we have a monic polynomial with $\alpha$ as the root that is of the proper degree it
+  must be the minimal polynomial.
 \end{enumerate}
 
 \sk
@@ -269,8 +289,8 @@ However $x^2+x+1$ is irreducible making the degree even.
       \end{array}
     \right)
   \]
-
-  Now we take the determinant of the matrix
+  Note that this matrix is a companion matrix for the
+  rational canonical form which implies that the determinant of
   \[
     xI-[T_\alpha] =
     \left(
@@ -283,6 +303,8 @@ However $x^2+x+1$ is irreducible making the degree even.
       \end{array}
     \right)
   \]
+  is precisely $\sum_0^{n}r_ix^i$ completing the proof.
+  
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
