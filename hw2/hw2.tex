@@ -1,0 +1,127 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{enumerate}
+
+\textwidth=15cm \textheight=22cm \topmargin=0.5cm \oddsidemargin=0.5cm \evensidemargin=0.5cm
+
+\newcommand{\sk}{\vskip 10mm}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\ra}{\rightarrow}
+
+\theoremstyle{plain}
+\newtheorem{problem}{Problem}
+\newtheorem{lemma}{Lemma}[problem]
+
+\theoremstyle{remark}
+\newtheorem{tpart}{}[problem]
+\newtheorem*{ppart}{}
+
+\begin{document}
+
+\begin{problem}
+  
+\end{problem}
+
+\begin{proof}
+  First note that if $15^\circ$ can be trisected then so can $30^\circ$ as we could bisect
+  $30^\circ$, trisect $15^\circ$ and then double the resulting angle. As such it will
+  suffice to show that we cannot trisect $15^\circ$.
+
+  A number is constructible if, and only if, both its real and imaginary parts are
+  constructible. If $15^\circ$ were constructible then so would $e^{i\cdot 10^\circ}$ as it would
+  be the intersection of the angle and the unit circle. The real part of which is
+  \[\alpha=\cos10^\circ = \frac{1}{2}\sqrt{\frac{1}{2}\left(4+2\cdot\left(\frac{1}{2}(1+i\sqrt{3})^{-\frac{1}{3}}+2^{\frac{2}{3}}(1+i\sqrt{3})\right)\right)} \]
+
+  We know that a number is constructible if, and only if, we have an ascending
+  chain of fields $\bb{Q}=F_0\subset\cdots\subset F_n=\bb{Q}[\alpha]$ where all of the intermediate degrees are two.
+  This enforces that the degree of the extension must be a power of $2$. However
+  for $\alpha$ at some point we will have to adjoin $(1+i\sqrt{3})^{-\frac{1}{3}}$ for which the
+  extension will be of degree $3$. By the tower theorem this means that $3|\bb{Q}[\alpha]$ but
+  this cannot occur.
+
+  Therefore $\alpha$ is not constructible and it then follows that neither $15^\circ$ nor $30^\circ$ can
+  be trisected.
+\end{proof}
+
+\sk
+
+\begin{problem}
+  
+\end{problem}
+
+\begin{itemize}
+\item[(a)]
+  Let $f(x)=x^2-x+1$. This polynomial has $\xi$ as a root. Moreover it is irreducible by
+  the rational roots theorem as $\pm 1$ are not roots.
+\item[(b)]
+  The roots of $f$ are $\xi$ and $-e^{2\pi i/3}=-\xi^2$. Thus $\bb{Q}[\xi,-\xi^2]=\bb{Q}[\xi]$ is the
+  splitting field for $f$.
+\item[(c)]
+  Since the degree of $f$ is 2 it follows that $[\bb{Q}[\xi]:\bb{Q}]=2$.
+\end{itemize}
+
+\sk
+
+\begin{problem}
+  
+\end{problem}
+
+\begin{itemize}
+\item[(a)] The roots of $f(x)=x^4+1$ are 
+\item[(b)] The roots of $g(x)=x^4+4$ are
+\item[(c)] The roots of $p(x)=fg(x)=(x^4+1)(x^4+4)$ are
+\item[(d)] The roots of $q(x)=(x^4-1)(x^4+4)$ are
+\end{itemize}
+
+\sk
+
+\begin{problem}
+  
+\end{problem}
+
+\begin{itemize}
+\item[(a)] It will follow that $[\bb{Q}(\alpha):\bb{Q}]=4$ if
+  $f(x)=x^4-4x^2+2$ is irreducible since $f(\alpha)=0$. It has
+  no rational roots by the rational root theorem however
+  we must now show that it cannot be the product of two
+  irreducible quadratics.
+\item[(b)]
+\end{itemize}
+
+\sk
+
+\begin{problem}
+  
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}
+  
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}
+  
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
