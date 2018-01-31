@@ -119,7 +119,7 @@
 \item[(a)] It will follow that $[\bb{Q}(\alpha):\bb{Q}]=4$ if
   $f(x)=x^4-4x^2+2$ is irreducible since $f(\alpha)=0$. However
   $f$ is irreducible by Eisenstein's criterion using $2$.
-\item[(b)] The roots of $f$ are $\pm\sqrt{2\pm\sqrt{2}}$
+\item[(b)] The roots of $f$ are $\pm\sqrt{2\pm\sqrt{2}}$. With
 \end{itemize}
 
 \sk
@@ -132,9 +132,24 @@
   of them. Which of these fields are isomorphic?
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+\begin{enumerate}
+\item ($x^3+x^2+1$) This polynomial is irreducible. The splitting field will be $\bb{F}_2/(x^3+x^2+1)$.
+\item ($x^3+x+1$) This polynomial is irreducible. The splitting field will be $\bb{F}_2/(x^3+x+1)$.
+\item ($x^3+x^2+x+1$) This polynomial is equal to $(x+1)^3$. Since all of its roots
+  are in $\bb{F}_2$ its splitting field is $\bb{F}_2$.
+\item ($x^3+1$) This polynomial is equal to $(x+1)(x^2+x+1)$. The splitting field will be $\bb{F}_2/(x^2+x+1)$.
+\item ($x^3+x^2$) This polynomial is equal to $x^2(x+1)$. Since all of its roots
+  are in $\bb{F}_2$ its splitting field is $\bb{F}_2$.
+\item ($x^3+x$) This polynomial is equal to $x(x+1)^2$. Since all of its roots
+  are in $\bb{F}_2$ its splitting field is $\bb{F}_2$.
+\item ($x^3+x^2+x$) This polynomial is equal to $x(x^2+x+1)$. The splitting field will be $\bb{F}_2/(x^2+x+1)$.
+\item ($x^3$) This polynomial is already factored. Since all of its roots
+  are in $\bb{F}_2$ its splitting field is $\bb{F}_2$.
+\end{enumerate}
+
+The ones polynomials with isomorphic splitting fields are $(3,5,6,8)$, $(4,7)$, and $(1,2)$.
+The splitting fields for $4$ and $7$ are isomorphic as they the same construction.
+However 1 and 2 are isomorphic since finite fields of the same size are isomorphic.
 
 \sk
 
@@ -144,15 +159,17 @@
     \item Show that $f(x)$ is irreducible in $\mathbb{F}_3[x]$.
     \item Let $\alpha$ be a root of $f(x)$ in some extension field $K$
       of $\mathbb{F}_3$, so that
-      $[\mathbb{F}_3[\alpha]: \mathbb{F}_3] = \mathrm{deg} f(x) = 3$.
+      $[\mathbb{F}_3[\alpha]: \mathbb{F}_3] = \deg f(x) = 3$.
       Show that $\mathbb{F}_3[\alpha]$ is a splitting field of $f(x)$
       over $\mathbb{F}_3$.
 \end{enumerate}
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+\begin{enumerate}
+\item Since $f(0)=-1, f(1)=-1,$ and $f(-1)=-1$ this third degree polynomial has no
+  roots and as such is irreducible.
+\item Let $K=F[x]/f$. Then let $\alpha:=x+\langle f\rangle$. 
+\end{enumerate}
 
 \sk
 
