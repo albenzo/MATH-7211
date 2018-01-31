@@ -24,7 +24,7 @@
 \begin{document}
 
 \begin{problem}
-  
+  Show that an angle of $30^\circ$ and an angle of $15^\circ$ cannot be trisected.
 \end{problem}
 
 \begin{proof}
@@ -51,7 +51,13 @@
 \sk
 
 \begin{problem}
-  
+  Let $\xi = e^{2\pi i /6} = \cos (2\pi/6) + i \sin (2\pi/6)$ be a primitive
+  $6^{th}$ root of unity over $\mathbb{Q}$. Find each of the following:
+\begin{enumerate}
+    \item The minimum polynomial $f(x) \in \mathbb{Q}[x]$ of $\xi$ over $\mathbb{Q}$.
+    \item The splitting field $F$ of $f(x)$ over $\mathbb{Q}$.
+    \item $[F:\mathbb{Q}]$.
+\end{enumerate}
 \end{problem}
 
 \begin{itemize}
@@ -68,35 +74,62 @@
 \sk
 
 \begin{problem}
-  
+  Find a splitting field extension $K: \mathbb{Q}$ for each
+  of the following polynomials over $\mathbb{Q}$ and in each
+  case determine the degree $[K:\mathbb{Q}]$.
+\begin{equation*}
+    (a) \text{  } x^4 + 1 \hspace{5mm} (b) \text{  } x^4 + 4 \hspace{5mm}
+    (c) \text{  } (x^4 +1)(x^4+4) \hspace{5mm} (d) \text{  } (x^4-1)(x^4+4)
+\end{equation*}
 \end{problem}
 
 \begin{itemize}
-\item[(a)] The roots of $f(x)=x^4+1$ are $r:=e^{\pi i/4},r^3,r^5,$ and $r^7$.
+\item[(a)] The roots of $f(x)=x^4+1$ are $r:=e^{\pi i/4},r^3,r^5,$ and $r^7$. Since
+  each all of the other roots can be expressed as a power of $r$ we have that
+  the splitting field of $f$ is $\bb{Q}[r,r^3,r^5,r^7]=\bb{Q}[r]$ the degree of which
+  is $4$ as $f$ is irreducible and thus the minimal polynomial. The irreducibility can
+  be checked by shifting to $f(x+1)$ and apply Eisenstein's Criterion with $p=2$.
 \item[(b)] The roots of $g(x)=x^4+4$ are the same roots as above but with each multiplied
-  by $\sqrt{2}$.
+  by $\sqrt{2}$. Let $s:=\sqrt{2}e^{\pi i /4}$. Then the other roots are $s^3/2,s^5/4,$ and
+  $s^7/8$. Similar to before the splitting field is then $\bb{Q}[s]$ and since this
+  polynomial is irreducible we have that $[\bb{Q}[s]:s]=4$.
+
 \item[(c)] The roots of $p(x)=fg(x)=(x^4+1)(x^4+4)$ are the roots of both part $a$ and $b$.
+  Since the roots here are cyclic if we take $rs$ we get $\sqrt{2}e^{\pi i /2}$. Keep multiplying
+  that by $r$ and we can hit every root. Thus the splitting field will be
+  $\bb{Q}[r]$ and the minimal polynomial will be the one from part $(a)$ giving
+  us that $[\bb{Q}[r]:\bb{Q}]=4$ for the degree of our splitting field.
 \item[(d)] The roots of $q(x)=(x^4-1)(x^4+4)$ are the roots of part $b$ as well
-  as $\pm 1$ and $\pm i$.
+  as $\pm 1$ and $\pm i$. However $s^2/2=i$ which means that we can express all of the roots
+  in terms of $s$. Similar to part $(c)$ our splitting field is the same as $b$, $\bb{Q}[s]$.
+  As before the degree of this splitting field is 4.
 \end{itemize}
 
 \sk
 
 \begin{problem}
-  
+  Let $f(x) \in \mathbb{Q}[x]$ be the minimal polynomial of $\alpha = \sqrt{2 + \sqrt{2}}$.
+\begin{enumerate}
+    \item Show that $f(x) = x^4 - 4x^2 + 2$. Thus, $[\mathbb{Q}(\alpha): \mathbb{Q}] = 4$.
+    \item Show that $\mathbb{Q}(\alpha)$ is the splitting field of $f(x)$ over $\mathbb{Q}$.
+\end{enumerate}
 \end{problem}
 
 \begin{itemize}
 \item[(a)] It will follow that $[\bb{Q}(\alpha):\bb{Q}]=4$ if
   $f(x)=x^4-4x^2+2$ is irreducible since $f(\alpha)=0$. However
   $f$ is irreducible by Eisenstein's criterion using $2$.
-\item[(b)]
+\item[(b)] The roots of $f$ are $\pm\sqrt{2\pm\sqrt{2}}$
 \end{itemize}
 
 \sk
 
 \begin{problem}
-  
+  Let $\mathbb{F}_p = \mathbb{Z}/p\mathbb{Z}$ be the field with $p$
+  elements, where $p$ is a prime number. Write down all monic cubic
+  polynomials in $\mathbb{F}_2[x]$, factor them completely into
+  irreducible factors and construct a splitting field for each
+  of them. Which of these fields are isomorphic?
 \end{problem}
 
 \begin{proof}
@@ -106,7 +139,15 @@
 \sk
 
 \begin{problem}
-  
+  Let $f(x) = x^3 + 2x + 2 \in \mathbb{F}_3[x]$.
+\begin{enumerate}
+    \item Show that $f(x)$ is irreducible in $\mathbb{F}_3[x]$.
+    \item Let $\alpha$ be a root of $f(x)$ in some extension field $K$
+      of $\mathbb{F}_3$, so that
+      $[\mathbb{F}_3[\alpha]: \mathbb{F}_3] = \mathrm{deg} f(x) = 3$.
+      Show that $\mathbb{F}_3[\alpha]$ is a splitting field of $f(x)$
+      over $\mathbb{F}_3$.
+\end{enumerate}
 \end{problem}
 
 \begin{proof}
@@ -116,7 +157,12 @@
 \sk
 
 \begin{problem}
-  
+  Suppose that $f(x) \in F[x]$ is irreducible of degree $n > 0$,
+  and let $L$ be the splitting field of $f(x)$ over $F$.
+\begin{enumerate}
+    \item Suppose that $[L:F]=n!$. Prove that $f(x)$ is irreducible.
+    \item Show that the converse of part $(a)$ is false.
+\end{enumerate}
 \end{problem}
 
 \begin{proof}
