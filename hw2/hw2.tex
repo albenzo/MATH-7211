@@ -141,16 +141,20 @@
 \end{problem}
 
 \begin{enumerate}
-\item ($x^3+x^2+1$) This polynomial is irreducible. The splitting field will be $\bb{F}_2/(x^3+x^2+1)$.
-\item ($x^3+x+1$) This polynomial is irreducible. The splitting field will be $\bb{F}_2/(x^3+x+1)$.
+\item ($x^3+x^2+1$) This polynomial is irreducible. The splitting field will
+  be $\bb{F}_2[x]/(x^3+x^2+1)$.
+\item ($x^3+x+1$) This polynomial is irreducible. The splitting field will
+  be $\bb{F}_2[x]/(x^3+x+1)$.
 \item ($x^3+x^2+x+1$) This polynomial is equal to $(x+1)^3$. Since all of its roots
   are in $\bb{F}_2$ its splitting field is $\bb{F}_2$.
-\item ($x^3+1$) This polynomial is equal to $(x+1)(x^2+x+1)$. The splitting field will be $\bb{F}_2/(x^2+x+1)$.
+\item ($x^3+1$) This polynomial is equal to $(x+1)(x^2+x+1)$. The splitting
+  field will be $\bb{F}_2[x]/(x^2+x+1)$.
 \item ($x^3+x^2$) This polynomial is equal to $x^2(x+1)$. Since all of its roots
   are in $\bb{F}_2$ its splitting field is $\bb{F}_2$.
 \item ($x^3+x$) This polynomial is equal to $x(x+1)^2$. Since all of its roots
   are in $\bb{F}_2$ its splitting field is $\bb{F}_2$.
-\item ($x^3+x^2+x$) This polynomial is equal to $x(x^2+x+1)$. The splitting field will be $\bb{F}_2/(x^2+x+1)$.
+\item ($x^3+x^2+x$) This polynomial is equal to $x(x^2+x+1)$. The splitting field
+  will be $\bb{F}_2[x]/(x^2+x+1)$.
 \item ($x^3$) This polynomial is already factored. Since all of its roots
   are in $\bb{F}_2$ its splitting field is $\bb{F}_2$.
 \end{enumerate}
@@ -198,15 +202,15 @@ However 1 and 2 are isomorphic since finite fields of the same size are isomorph
 \end{problem}
 
 \begin{proof}
-  We will proceed by induction over the degree of $f$.
-  Suppose that $\deg f=1$. Then $f(x)=x-a$ for $a\in F$
-  which is irreducible.
-
-  Next assume that for $f(x)$ with degree $n$ that if the degree
-  of the splitting field, $L$, is $n!$ then $f(x)$ is irreducible.
-
-  Now suppose that $f(x)$ was a polynomial of degree $n+1$ where
-  the degree of the splitting field $L$ is $(n+1)!$.
+  Let $f(x)$ be a polynomial of degree $n$ and suppose that $f$
+  is reducible. Then $f=gh$, where $\deg g=a$ and $\deg h =b$, with
+  $0<a,b<n$. Let $L$ be the splitting field of $f$ and let $L'$ be
+  the splitting field of $g$. Then by the tower theorem we have
+  that $[L:F]=[L:L'][L':F]$. We know that $[L:L'][L':F]\leq (n-a)!n!$
+  from a proposition from class. However
+  \[ {n\choose a}=\frac{n!}{(n-a)!n!}>1\]
+  as $0<a<n$. Thus
+  \[[L:F]=[L:L'][L':F]\leq (n-a)!n!< n! \]
 \end{proof}
 
 Let $f(x)=x^4+1$ from above. This polynomial is irreducible however
