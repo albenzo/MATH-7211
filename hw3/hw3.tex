@@ -13,7 +13,7 @@
 \newcommand{\bb}[1]{\mathbb{#1}}
 \newcommand{\ra}{\rightarrow}
 
-\theoremstyle{plain}
+\theoremstyle{remark}
 \newtheorem{problem}{Problem}
 \newtheorem{lemma}{Lemma}[problem]
 
@@ -28,7 +28,58 @@
 \end{problem}
 
 \begin{proof}
-  
+  First note that for any polynomial that $f(x)f(-x)=f(x^2)$.
+  Applying this to our cyclotomic polynomial we get that
+  \[
+    \Phi_n(x)\Phi_n(-x)=\Phi_n(x^2)
+  \]
+  Moreover this implies that
+  \[
+    \Phi_n(-x)=\frac{\Phi_n(x^2)}{\Phi_n(x)}
+  \]
+  If we look at the expansion of $\Phi_n(x^2)$ we have
+  \[
+    \Phi_n(x^2)=\prod_{1\leq d<n,\ (d,n)=1}(x^2-\zeta_n^d)
+  \]
+  We can factor to get
+  \[
+    \Phi_n(x^2)=\prod_{1\leq d<n,\ (d,n)=1}(x-\zeta_n^{d/2})(x+\zeta_n^{d/2})
+  \]
+  Applying the fact that for roots of unity that $\zeta_n^d=-\zeta_n^{n/2+d}$
+  we get
+  \[
+    \Phi_n(x^2)=\prod_{1\leq d<n,\ (d,n)=1}(x-\zeta_n^{d/2})(x-\zeta_n^{(n+d)/2})
+  \]
+  Then by changing the indexes we get
+  \[
+    \Phi_n(x^2)=\prod_{1\leq d<n,\ (d,n)=1}(x-\zeta_{2n}^d)(x-\zeta_{2n}^{n+d})
+  \]
+  Returning to our quotient we now have
+  \[
+    \frac{\Phi_n(x^2)}{\Phi_n(x)}=\prod_{1\leq d<n,\ (d,n)=1}\frac{(x-\zeta_{2n}^d)(x-\zeta_{2n}^{n+d})}{(x-\zeta_n^d)}
+  \]
+
+  Since $n$ is odd and greater than 1 we have that if $\gcd(d,n)=1$ then either
+  $\gcd(d,2n)=1$ or $\gcd(d+n,2n)=1$. Also note that $\varphi(2n)=\varphi(2)\varphi(n)=\varphi(n)$ implying
+  that $2n$ and $n$ have the same number of numbers that are relatively prime that
+  are smaller than them. Thus all of the necessary terms for $\Phi_{2n}(x)$ appear in
+  the earlier quotient.
+
+  If $\gcd(d,2n)=1$ or $\gcd(d+n,2n)=1$ this implies that the other is even
+  as $n$ is odd. Let $2k$ be the even number among $d$ or $d+n$. Then we can
+  rewrite the prior expression as
+  \[
+    \frac{\Phi_n(x^2)}{\Phi_n(x)}=\Phi_{2n}(x)\prod_{1\leq d<n,\ (d,n)=1}\frac{(x-\zeta_n^k)}{(x-\zeta_n^d)}
+  \]
+
+  However the product on the right is equal to 1 \textbf{(justify better)} as
+  each $k$ above will either directly match a $d$ or $n/2$ factor will wrap it
+  to around. Thus giving us the equality
+  \[
+    \Phi_n(-x)=\frac{\Phi_n(x^2)}{\Phi_n(x)}=\Phi_{2n}(x)
+  \]
+
+  Therefore if $n$ is odd and $n>1$ we have that $\Phi_{2n}(x)=\Phi_n(-x)$.
 \end{proof}
 
 \sk
@@ -37,7 +88,7 @@
   Suppose $A$ is an $n\times n$ matrix over $\bb{C}$ for which $A^k=I$
   for some integer $k\geq1$. Show that $A$ can be diagonalized.
   Show that the matrix
-  $A=\left(\begin{array}{cc}1&\alpha\\0,1\\ \end{array}\right)$
+  $A=\left(\begin{array}{cc}1&\alpha\\0&1\\ \end{array}\right)$
   where $\alpha$ is an element of a field of characteristic $p$ satisfies
   $A^p=I$ and cannot be diagonalized if $\alpha\neq 0$.
 \end{problem}
