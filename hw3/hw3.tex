@@ -28,60 +28,31 @@
 \end{problem}
 
 \begin{proof}
-  First note that for any polynomial that $f(x)f(-x)=f(x^2)$.
-  Applying this to our cyclotomic polynomial we get that
+  Begin with $\Phi_n(-x)$. Then we have that
   \[
-    \Phi_n(x)\Phi_n(-x)=\Phi_n(x^2)
+    \Phi_n(-x) = \prod_{1\leq d<n|(d,n)=1}(-x-\zeta_n^d)
   \]
-  Moreover this implies that
+  If we pull out the negatives we get
   \[
-    \Phi_n(-x)=\frac{\Phi_n(x^2)}{\Phi_n(x)}
+    \Phi_n(-x) = (-1)^{\varphi(n)}\prod_{1\leq d<n|(d,n)=1}(x-\zeta_n^{d+n/2})
   \]
-  If we look at the expansion of $\Phi_n(x^2)$ we have
+  Since $\varphi(m)$ is even for $m\geq 3$ we can safely remove it. Then
+  we change the base of $\zeta_n$ to get
   \[
-    \Phi_n(x^2)=\prod_{1\leq d<n,\ (d,n)=1}(x^2-\zeta_n^d)
+    \Phi_n(-x) = (-1)^{\varphi(n)}\prod_{1\leq d<n|(d,n)=1}(x-\zeta_{2n}^{2d+n})
   \]
-  We can factor to get
+  All of the $2d+n$ are greater than or equal to 1 and less than
+  $2n$. Moreover as $n$ is odd, greater than 1, and $\gcd(d,n)=1$
+  we have that $\gcd(2d,n)=1$. Since $\deg \Phi_{2n}(x)=\varphi(2n)=\varphi(n)$ and
+  there are $\varphi(n)$ factors in the above product we must have all of
+  the factors for $\Phi_{2n}(x)$.
+  
+  Therefore
   \[
-    \Phi_n(x^2)=\prod_{1\leq d<n,\ (d,n)=1}(x-\zeta_n^{d/2})(x+\zeta_n^{d/2})
-  \]
-  Applying the fact that for roots of unity that $\zeta_n^d=-\zeta_n^{n/2+d}$
-  we get
-  \[
-    \Phi_n(x^2)=\prod_{1\leq d<n,\ (d,n)=1}(x-\zeta_n^{d/2})(x-\zeta_n^{(n+d)/2})
-  \]
-  Then by changing the indexes we get
-  \[
-    \Phi_n(x^2)=\prod_{1\leq d<n,\ (d,n)=1}(x-\zeta_{2n}^d)(x-\zeta_{2n}^{n+d})
-  \]
-  Returning to our quotient we now have
-  \[
-    \frac{\Phi_n(x^2)}{\Phi_n(x)}=\prod_{1\leq d<n,\ (d,n)=1}\frac{(x-\zeta_{2n}^d)(x-\zeta_{2n}^{n+d})}{(x-\zeta_n^d)}
+    \Phi_n(-x)=\Phi_{2n}(x)
   \]
 
-  Since $n$ is odd and greater than 1 we have that if $\gcd(d,n)=1$ then either
-  $\gcd(d,2n)=1$ or $\gcd(d+n,2n)=1$. Also note that $\varphi(2n)=\varphi(2)\varphi(n)=\varphi(n)$ implying
-  that $2n$ and $n$ have the same number of numbers that are relatively prime that
-  are smaller than them. Thus all of the necessary terms for $\Phi_{2n}(x)$ appear in
-  the earlier quotient.
-
-  If $\gcd(d,2n)=1$ or $\gcd(d+n,2n)=1$ this implies that the other is even
-  as $n$ is odd. Let $2k$ be the even number among $d$ or $d+n$. Then we can
-  rewrite the prior expression as
-  \[
-    \frac{\Phi_n(x^2)}{\Phi_n(x)}=\Phi_{2n}(x)\prod_{1\leq d<n,\ (d,n)=1}\frac{(x-\zeta_n^k)}{(x-\zeta_n^d)}
-  \]
-
-  However the degree of $\Phi_{2n}(x)$ is the same as that
-  of $\Phi_n(-x)$ which implies that the term on the right
-  is a constant. Moreover since both polynomials are
-  monic it can only be that the product on the right is 1.
-  Thus giving us the equality:
-  \[
-    \Phi_n(-x)=\frac{\Phi_n(x^2)}{\Phi_n(x)}=\Phi_{2n}(x)
-  \]
-
-  Therefore if $n$ is odd and $n>1$ we have that $\Phi_{2n}(x)=\Phi_n(-x)$.
+  for $n$ odd and $n>1$.
 \end{proof}
 
 \sk
