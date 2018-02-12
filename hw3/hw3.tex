@@ -170,8 +170,8 @@
     Conclude that $\Phi_n(x)$ divides $(x^n-1)/(x^{m_i}-1)$ and hence that the
     integer $\Phi_n(q)$ divides $(q^n-1)/(q^{m_i}-1)$ for $i=1,2,\ldots,r$.
     
-  \item[(e)] Prove that (c) and (d)e imply that
-    $\Phi(q)=\prod_{\zeta\ \mathrm{primitive}}(q-\zeta)$ divides $q-1$.
+  \item[(e)] Prove that (c) and (d) imply that
+    $\Phi_n(q)=\prod_{\zeta\ \mathrm{primitive}}(q-\zeta)$ divides $q-1$.
     Prove that $|q-\zeta|>q-1$ (complex absolute value) for any root
     of unity $\zeta\neq 1$ [note that 1 is the closest point on the unit circle
     in $\bb{C}$] to the point $q$ on the real line]. Conclude that
@@ -180,7 +180,73 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item[(a)] Since $D$ is a finite division ring the center $Z$ is a
+    commutative finite division ring. Thus $Z$ is a field. Moreover
+    all finite fields are of order $p^n$ where $p$ is a prime. If
+    $Z\cong\bb{F}_{p^n}$ then this will contain $\bb{F}_p$ as a subfield
+    as $\bb{F}_{p^n}$ is the splitting field for $x^{p^n}-x$ over
+    $\bb{F}_{p}$.
+
+    \sk
+
+    For the second part suppose that $Z\cong\bb{F}_q$. Let $b_1:= 1$. Then
+    together define $\mathcal{B}_i:=~\mathrm{span}\{b_1,\ldots,b_i\}$
+    (linear combinations with coefficients in $Z$) and
+    $b_{i+1}$ to be some element in $D\setminus\mathcal{B}_i$. Since $D$ is finite
+    it follows that there will exist an $n$ where $\mathcal{B}_n=D$. Now
+    we will show that the set $\{b_1,\ldots,b_n\}$ forms a basis for $D$.
+    Since it already spans $D$ we just need to show that it is linearly
+    independent.
+
+    Suppose otherwise. Then we have a nontrivial linear combination
+    $\sum_0^na_ib_i=0$ giving us that $-\frac{1}{a_n}\sum_0^{n-1}a_ib_i=b_n$.
+    However this contradicts the assumption that $b_n\in D\setminus\mathcal{B}_{n-1}$.
+
+    Therefore $\{b_1,\ldots,b_n\}$ forms a basis for $D$ over $Z$ and as such
+    $|D|=q^n$ for some positive integer $n$.
+  \item[(b)] Let $x\in D^\times$ and let $D_x$ be the set of elements that commute
+    with $x$. We will show that $D_x$ is a division ring and that $Z\subseteq D_x$.
+    Since elements of the center commute with all elements of $D$ it is
+    clear that $Z\subseteq D_x$. This implies that $0$ and $1$ are in $D_x$.
+
+    Next we show that $D_x$ is closed under addition, multiplication, and inverses.
+    Let $r,s\in D_x$. Then for addition we have
+    \[
+      (r+s)x=rx+sx=xr+xs=x(r+s)
+    \]
+    For multiplication we have
+    \[
+      (rs)x=r(sx)=r(xs)=(rx)s=(xr)s=x(rs)
+    \]
+    Finally for inverses since we have $rx=xr$ for $r\in D_x$ if we multiply
+    on the left and right by $r^{-1}$ it follows that
+    \[
+      xr^{-1}=r^{-1}x
+    \]
+    implying that $r^{-1}\in D_x$ whenever $r\in D_x$.
+    
+    Therefore $D_x$ is a finite division ring. Moreover it fulfills the
+    same hypothesis as in part (a) so it must be of size $q^m$ for some $m$.
+    If $x\notin Z$ then there is some element $y\in D$ such that $yx\neq xy$. Then
+    $y\notin D_x$. However since both $D$ and $D_x$ are vector spaces over $Z$
+    with size $q^n$ and $q^m$ respectively it must be that $n>m$ since
+    $D_x$ is a strict subset of $D$.
+  \item[(c)] Let $D^\times$ act on itself by conjugation. Then the class equation
+    for $D^\times$ will be
+    \[
+      |D^\times| = |Z|+\sum_1^r\frac{|D^\times|}{|C_{D^\times(x_i)}|}
+    \]
+    If we substitute in for known values we get that
+    \[
+      q^n-1 = (q-1)+\sum_1^r\frac{q^n-1}{|C_{D^\times}(x_i)}
+    \]
+
+    Note that the stabilizer for each $x_i$ will in fact be $D_{x_i}$ from
+    part (c). As such the order will be $q^{m_i}-1$ where $m_i<n$ as $x_i\notin Z$.
+  \item[(d)] Since $\frac{q^n-1}{q^{m_i}-1}=$
+  \item[(e)]
+  \end{enumerate}
 \end{proof}
 
 \sk
