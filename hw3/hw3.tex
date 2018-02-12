@@ -67,7 +67,36 @@
 \end{problem}
 
 \begin{proof}
+  Let $J$ be the Jordan normal form of $A$. This will exist since
+  we are working over the complex numbers. If $J$ is diagonalizable
+  then $A$ will be as well. However because we have the relation
+  $A^k-I_n=0$ for some $k>1$ it follows that the characteristic polynomial
+  of $A$ will be $x^k-1$. However this has all distinct roots. As such
+  the block matrices in $J$ will have to be $1\times 1$ since the eigenvalues
+  are distinct. Thus $J$ is a diagonal matrix and so is $A$.
+
+  \sk
   
+  For the second part first note that
+  \[
+    \left(
+      \begin{array}{cc}
+        1&\alpha\\
+        0&1\\
+      \end{array}
+    \right)^k
+    =
+    \left(
+      \begin{array}{cc}
+        1&k\alpha\\
+        0&1\\
+      \end{array}
+    \right)
+  \]
+  which demonstrates that $A^p=I$ since we are in a field of characteristic
+  $p$. If we calculate the characteristic polynomial of $A$ where $\alpha\neq 0$
+  we get $(x-1)^2$. Since the eigenvalues are not unique it will not be
+  diagonalizable.
 \end{proof}
 
 \sk
@@ -80,7 +109,34 @@
 \end{problem}
 
 \begin{proof}
-  
+  Since powers distribute over multiplication it is clear that
+  $\varphi$ preserves multiplication. The fact that it preserves addition
+  follows from $\bb{F}_{p^n}$ being of characteristic $p$ as:
+  \[(x+y)^p=\sum_0^p{p\choose k}x^ky^{p-k}=x^p+y^p \]
+
+  Now we must show that the map is both injective and surjective.
+  We will start with injectivity. Suppose that $x^p=1$. Then
+  \[x^p-1^p=(x-1)^p=0 \]
+  Which implies that $x=1$ since we are in a field. Since the
+  kernel is trivial it follows that $\varphi$ is injective.
+
+  For surjectivity note that $F_{p^n}^*$ is a multiplicative
+  group of order $p^n-1$. As such given $y\in F_{p^n}^*$ we have
+  that $y^{p^n}=y$. It then follows that
+  \[\left(y^{p^{n-1}}\right)^p=\varphi\left(y^{p^{n-1}}\right)=y\]
+  which demonstrates that $\varphi$ is surjective.
+
+  Therefore the Frobenius map $\varphi$ is an isomorphism.
+
+  \sk
+
+  For the latter portion note that $\varphi^n(x)=x^{p^n}$ which
+  is equal to $x$ from the argument made earlier. However
+  this cannot occur from $m<n$. If it did then we would have
+  that $x^{p^m-1}=x$ for all $x\in\bb{F}_{p^n}$. This would imply that
+  the orders of all elements in $\bb{F}_{p^n}$ is at most $p^m-1$.
+  However this is a contradiction as the multiplicative groups for
+  finite fields are cyclic.
 \end{proof}
 
 \sk
@@ -134,7 +190,20 @@
 \end{problem}
 
 \begin{proof}
-  
+  Suppose that $\bb{Q}[\sqrt{2}]$ and $\bb{Q}[\sqrt{3}]$ were isomorphic.
+  Then there would be an isomorphism $\varphi:\bb{Q}[\sqrt{2}]\rightarrow\bb{Q}[\sqrt{3}]$.
+  Let $\varphi(\sqrt{2})=a+b\sqrt{3}$. Then we have that
+  \[ \varphi(2)=\varphi(1+1)=\varphi(1)+\varphi(1)=2\]
+  it then follows that $(a+b\sqrt{3})^2=2$. However by expanding we get
+  \[ a^2+3b^2+2ab\sqrt{3}=2 \]
+  which implies that either $a$ or $b$ is zero since we are in a field.
+  If $b=0$ then $a^2=2$ which implies that $\sqrt{2}\in\bb{Q}[\sqrt{3}]$ which is
+  a contradiction. On the other hand if $a=0$ then $b^2=2/3$ which
+  implies that $\sqrt{3}b=\sqrt{2}$. Then $\sqrt{2/3}\in\bb{Q}[\sqrt{3}]$
+  once again which is a contradiction.
+
+  Therefore the fields $\bb{Q}[\sqrt{2}]$ and $\bb{Q}[\sqrt{3}]$ are
+  not isomorphic.
 \end{proof}
 
 \sk
@@ -167,7 +236,18 @@
 \end{problem}
 
 \begin{proof}
+  For the sake of brevity let $\alpha:=\sqrt{2+\sqrt{2}}$.
+  We know from a prior homework that the degree of $\bb{Q}(\alpha)$
+  is $4$. We also know that minimal polynomial for $\alpha$ is
+  $x^4-4x^2+2$ whose roots are $\pm\sqrt{2\pm\sqrt{2}}$. Thus the Galois group
+  for this field must be of size 4. Define $\sigma:\bb{Q}(\alpha)\rightarrow\bb{Q}(\alpha)$ by
+  its action on the roots
+  \[\alpha\mapsto\alpha^3-\alpha,\quad-\alpha\mapsto-\alpha^3+\alpha,\quad\alpha^3-\alpha\mapsto-\alpha,\quad-\alpha^3-\alpha\mapsto\alpha \]
+
+  \textbf{Probably want to justify why this is a homomorphism at all}
   
+  This is of order 4. As such the Galois group must be isomorphic to
+  $\bb{Z}_4$.
 \end{proof}
 
 \sk
