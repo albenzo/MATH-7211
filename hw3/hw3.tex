@@ -70,7 +70,7 @@
   Let $J$ be the Jordan normal form of $A$. This will exist since
   we are working over the complex numbers. If $J$ is diagonalizable
   then $A$ will be as well. However because we have the relation
-  $A^k-I_n=0$ for some $k>1$ it follows that the characteristic polynomial
+  $A^k-I_n=0$ for some $k>1$ it follows that the minimal polynomial
   of $A$ will be $x^k-1$. However this has all distinct roots. As such
   the block matrices in $J$ will have to be $1\times 1$ since the eigenvalues
   are distinct. Thus $J$ is a diagonal matrix and so is $A$.
@@ -94,7 +94,7 @@
     \right)
   \]
   which demonstrates that $A^p=I$ since we are in a field of characteristic
-  $p$. If we calculate the characteristic polynomial of $A$ where $\alpha\neq 0$
+  $p$. If we calculate the minimal polynomial of $A$ where $\alpha\neq 0$
   we get $(x-1)^2$. Since the eigenvalues are not unique it will not be
   diagonalizable.
 \end{proof}
@@ -244,8 +244,38 @@
 
     Note that the stabilizer for each $x_i$ will in fact be $D_{x_i}$ from
     part (c). As such the order will be $q^{m_i}-1$ where $m_i<n$ as $x_i\notin Z$.
-  \item[(d)] Since $\frac{q^n-1}{q^{m_i}-1}=$
-  \item[(e)]
+  \item[(d)] From class we have the formula
+    \[
+      x^n-1 = \prod_{d|n}\Phi_d(x)
+    \]
+    Applying that formula here we can rewrite the quotient as
+    \[
+      \frac{q^n-1}{q^{m_i}-1}=\frac{\prod_{d|n}\Phi_d(q)}{\prod_{d'|m_i}\Phi_{d'}(q)}\in\bb{Z}
+    \]
+    However since this is an integer we must have that each term $\Phi_{d'}(q)$
+    divides evenly into the above which implies that $d'|n$. Since
+    $m_i|m_i$ we have that $m_i|n$.
+
+    Moreover if we replace $q$ with $x$ the result still holds. It then
+    follows since $\Phi_n(x)|(x^n-1)$ as $m_i<n$ so it will not be canceled.
+    Thus $\Phi_n(q)|\frac{q^n-1}{q^{m_i}-1}$.
+  \item[(e)] From (d) we have that $\Phi_n(q)$ divides $q^n-1$ and
+    that it divides $\frac{q^n-1}{q^{m_i}-1}$ for each $i$. Thus
+    from the class equation in part (c) it must be the
+    case that $\Phi_n(q)$ also divides $q-1$.
+
+    Now we will show that $|q-\zeta|>q-1$ if $\zeta\neq 1$. If we evaluate
+    $|q-\zeta|^2$ we get
+    \[
+      |q-\zeta|^2 = (q-\cos\theta)^2+(-\sin\theta)^2=q^2+1-2q\cos\theta 
+    \]
+    Then if we compare this to $(q-1)^2$ we see that
+    \[
+      q^2+1-2q\cos\theta\geq q^2-1-2q
+    \]
+    and since $\zeta\neq 1$ we have that $\cos\theta<1$ which makes this inequality
+    strict. Thus $n=1$ which implies that $Z=D$ and that $D$ is in fact
+    a field.
   \end{enumerate}
 \end{proof}
 
@@ -308,7 +338,7 @@
   $x^4-4x^2+2$ whose roots are $\pm\sqrt{2\pm\sqrt{2}}$. Thus the Galois group
   for this field must be of size 4. Define $\sigma:\bb{Q}(\alpha)\rightarrow\bb{Q}(\alpha)$ by
   its action on the roots
-  \[\alpha\mapsto\alpha^3-\alpha,\quad-\alpha\mapsto-\alpha^3+\alpha,\quad\alpha^3-\alpha\mapsto-\alpha,\quad-\alpha^3-\alpha\mapsto\alpha \]
+  \[\alpha\mapsto\alpha^3-\alpha,\quad-\alpha\mapsto-\alpha^3+\alpha,\quad\alpha^3-\alpha\mapsto-\alpha,\quad-\alpha^3+\alpha\mapsto\alpha \]
 
   \textbf{Probably want to justify why this is a homomorphism at all}
   
