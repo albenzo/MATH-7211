@@ -1,0 +1,98 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{enumerate}
+
+\textwidth=15cm \textheight=22cm \topmargin=0.5cm \oddsidemargin=0.5cm \evensidemargin=0.5cm
+
+\newcommand{\sk}{\vskip 10mm}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\ra}{\rightarrow}
+
+\theoremstyle{plain}
+\newtheorem{problem}{Problem}
+\newtheorem{lemma}{Lemma}[problem]
+
+\theoremstyle{remark}
+\newtheorem{tpart}{}[problem]
+\newtheorem*{ppart}{}
+
+\begin{document}
+
+\begin{problem}
+  Give an example of fields $F\subset E\subset K$   such that $K$ is a root
+  extension of $F$ but $E$ is not a root extension of $F$.
+  (Hint: Look at $K=\bb{Q}(\zeta)$ where $\zeta$ is the primitive
+  7th root of unity).
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}
+  Let $F=\bb{Q}$, $E=\bb{Q}(\sqrt{3})$, $K=\bb{Q}(\sqrt{\sqrt{3}+1})$.
+  Show that $E/F$ and $K/E$ are Galois extensions, but that $K/F$
+  is not Galois. Find the minimal polynomial of $\sqrt{\sqrt{3}+1}$
+  and find its Galois group.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}
+  Find a root extension of $\bb{Q}$ containing the splitting fields
+  of each of the following polynomials.
+  \begin{enumerate}
+  \item[(a)] $x^4+1$
+  \item[(b)] $x^4+3x^2+1$
+  \item[(c)] $x^5+4x^3+x$
+  \item[(d)] $(x^3-2)(x^7-5)$
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}
+  Give an example of a polynomial $\bb{Q}[x]$ which is solvable by radicals,
+  but whose splitting field is not a root extension of $\bb{Q}$.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}
+  For $r$ a positive integer, define $f_r(x)\in\bb{Q}[x]$ by
+  \[
+    f_r(x)=(x^2+4)x(x^2-4)(x^2-16)\cdots(x^2-4r^2)
+  \]
+  \begin{enumerate}
+  \item[(a)] Give a (rough) sketch of the graph of $f_r(x)$
+  \item[(b)] Show that if $k$ is an odd integer, then $|f_r(k)|\geq 5$.
+  \item[(c)] Show that $g_r(x)=f_r(x)-2$ is irreducible over $\bb{Q}$ and
+    determine its Galois group when $2r+3=p$ is prime.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
