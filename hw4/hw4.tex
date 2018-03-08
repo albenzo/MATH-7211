@@ -30,10 +30,6 @@
   7th root of unity).
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
-
 \sk
 
 \begin{problem}
@@ -43,10 +39,26 @@
   and find its Galois group.
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
+We can see that $E/F$ and $K/E$ are Galois since they are
+both splitting fields of separable polynomials $x^2-3$ and
+$x^2-(\sqrt{3}+1)$ respectively.
 
+Now we will show that the $K/F$ is not Galois. First note that the
+minimal polynomial of $\sqrt{\sqrt{3}+1}$ is $x^4-2x^2-2$. If it
+was Galois then it would contain all of the roots which are
+$\pm\sqrt{1\pm\sqrt{3}}$. However then it would contain the product
+\[
+  \sqrt{1+\sqrt{3}}\sqrt{1-\sqrt{3}}=i\sqrt{2}
+\]
+
+However $i\notin K$ which shows that $K/E$ is not Galois.
+
+To find the Galois group of $f(x)=x^4-2x^2-2$ we will follow the procedure
+in Dummit and Foote beginning on page 615. The resolvent cubic for
+$f$ is $h(x)=x^3+4x^2+12x$. Since $h$ is reducible into a linear term
+and a quadratic the Galois group is either $\bb{Z}_4$ or $D_8$. However
+since the discriminant of $f$ is $-4608$ which is negative. As such
+the Galois group cannot be cyclic. Therefore $\text{Gal}(x^4-2x^2-2)\cong D_8$.
 \sk
 
 \begin{problem}
@@ -59,10 +71,23 @@
   \item[(d)] $(x^3-2)(x^7-5)$
   \end{enumerate}
 \end{problem}
+\sk
 
-\begin{proof}
-  
-\end{proof}
+\begin{enumerate}
+\item [(a)] The roots of $x^4+1$ are $e^{\pi i/4},e^{3\pi i/4},e^{5\pi i/4}$, and $e^{7\pi i/4}$.
+  Since these are all roots of $x^4-(-1)$ the field
+  $\bb{Q}[e^{\pi i/4},e^{3\pi i/4},e^{5\pi i/4},e^{7\pi i/4}]$ has a root tower from adjoining
+  each one in turn.
+\item [(b)] The roots of $x^4+3x^2+1$ are $\pm\sqrt{\frac{-3\pm\sqrt{5}}{2}}$. The splitting
+  field will then be contained in the root tower where we adjoint $\sqrt{5}$ followed
+  by $\sqrt{3+\sqrt{5}}$ and finally $i$.
+\item [(c)] The roots of $x^5+4x^3+x$ are $0,\pm\sqrt{-2\pm\sqrt{3}}$. Similar to part (b)
+  we can get a root tower containing the splitting field by adjoining
+  $\sqrt{3},\sqrt{2+\sqrt{3}}$, and $i$ in order.
+\item [(d)] The roots of $(x^3-2)(x^7-5)$ are $\sqrt{2}\zeta_3^i,\sqrt{5}\zeta_7^j$ for $0\leq i<3$ and
+  $0\leq j<7$. We can then obtain a root extension containing the splitting field by
+  adjoining each of the roots in turn.
+\end{enumerate}
 
 \sk
 
@@ -71,9 +96,6 @@
   but whose splitting field is not a root extension of $\bb{Q}$.
 \end{problem}
 
-\begin{proof}
-  
-\end{proof}
 
 \sk
 
@@ -91,7 +113,23 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item[(a)] Will have roots at $\pm 2r$ then go off on its own.
+  \item[(b)] 
+  \item[(c)] First note that for $f_r(x)$ is monic and that the coeffiecient
+    for every other term will be divisible by 2 as $4r^2$ is even. Moreover
+    as we multiply by $x$ in the product form the polynomial has no constant
+    term. Thus $g_r(x)=f_r(x)-2$ is irreducible by Eisenstein's criterion with
+    2.
+
+    Since $|f_r(k)|\geq 5$ for odd $k$ we know that $g_r$ will have the same
+    number of roots as $f_r$. We also know that there are two complex
+    roots. As such one of the automorphisms in our Galois group will
+    be a transposition supplied by complex conjugation. In addition since $g_r$
+    is irreducible the action of the Galois group on the roots is transitive.
+    Since the degree of $g_r$ is prime we have that $\text{Gal}(g_r)\cong S_p$
+    as the group is transitive and contains a transposition.
+  \end{enumerate}
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
