@@ -55,7 +55,19 @@
   As such $F\cong Q\oplus P$ by the splitting lemma which implies that
   condition (b) holds.
 
-  Finally we show that (b) implies (a).
+  Finally we show that (b) implies (a). Let $F=P\oplus Q$ where $F$
+  is free and let $\pi:F\rightarrow P$ be the projection map. Then let
+  $f:P\rightarrow N$ and $g:M\rightarrow N$ where $g$ is surjective.
+
+  Let $x$ be a generator of $F$ and $n_x$ as $f\circ\pi(x)\in N$. By surjectivity
+  of $g$ there exists $m_x\in M$ such that $g(m_x)=n_x$. By the universal
+  property of free modules there exists a unique map $\bar{f}:F\rightarrow M$ such
+  that $g\circ\bar{f}(x)=f\circ\pi(x)$. Now define $\tilde{f}:P\rightarrow M$ by $\tilde{f}(p)=\bar{f}(p+0_q)$.
+  Then
+  \[
+    g\circ\tilde{f}(p)=f\circ\pi(p+0_q)=f(p)
+  \]
+  which completes the proof.
 \end{proof}
 
 \sk
@@ -114,7 +126,7 @@ though neither element is zero.
     \right\}
   \]
   be the ring of upper triangular matrices over $F$. Let $M=F^2$ and make
-$M$ into a (left) $R$-module by matrix multiplication. Show that
+  $M$ into a (left) $R$-module by matrix multiplication. Show that
   $\text{End}_R(M)\cong F$. Conclude that the converse of Schur's lemma
   is false, i.e., $\text{End}_R(M)$ can be a division ring without
   $M$ being a simple $R$-module.
@@ -388,12 +400,10 @@ and as such $\ell(R)=\infty$ as a right $R$-module.
 
 \begin{proof}
   \begin{enumerate}
-  \item[(a)] By Theorem $7.1.28$ from Adkins' book a ring is semisimple if and
-  only if every $R$-module is semisimple. Since $R/I$ is an $R$-module
-  it is semisimple.
-\item[(b)] The rationals are simple, and as such semisimple, since they are
-  a field. However the integers are a subring of the rationals and
-  the integers are not semisimple.
+  \item[(a)] See problem 4.
+  \item[(b)] The rationals are simple, and as such semisimple, since they are
+    a field. However the integers are a subring of the rationals and
+    the integers are not semisimple.
   \end{enumerate}
 \end{proof}
 
