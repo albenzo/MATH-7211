@@ -103,9 +103,15 @@ though neither element is zero.
 \end{problem}
 
 \begin{proof}
-  By Theorem $7.1.28$ from Adkins' book a ring is semisimple if and
-  only if every $R$-module is semisimple. Since $R/I$ is an $R$-module
-  it is semisimple.
+  Suppose that $R=\bigoplus_\alpha M_\alpha$ is a semisimple ring and let $\pi:R\rightarrow R/I$ be the
+  projection map. Then $\pi(M_\alpha)$ is an ideal of $R/I$ which implies that
+  $R/I\cong \bigoplus_\alpha \pi(M_\alpha)$. Moreover since the preimages of ideals are ideals
+  the components $\pi(M_\alpha)$ must also be simple otherwise it would violate
+  the simplicity of the $M_\alpha$s.
+
+  Therefore since the $\pi(M_\alpha)$s are simple and ideals of $R/I$ we have
+  a decomposition of $R/I$ into simple submodules as a $R/I$ module.
+  It then follows that $R/I$ is a semisimple ring.
 \end{proof}
 
 \sk
@@ -353,6 +359,11 @@ adjoining roots of primes $\bb{Q}[\sqrt{2},\sqrt{3},\ldots]$.
 Since there are infinitely many primes this chain is infinite
 and as such $\ell(R)=\infty$ as a right $R$-module.
 
+For the descending series let $\mathcal{B}$ be a basis for $\bb{R}$ over
+$\bb{Q}$. Then do the same construction as above but instead each
+time take away an element of $\mathcal{B}$. This will create an
+infinite descending series.
+
 \sk
 
 \begin{problem}[7.11]
@@ -383,9 +394,26 @@ and as such $\ell(R)=\infty$ as a right $R$-module.
   matrix.
 \end{problem}
 
+From Adkins' book the linear transformation will be semisimple as
+described above if the minimal polynomial is the product of irreducible
+factors. The minimal polynomial for $A$ is $X^2+Y$ which is irreducible
+for $F$ but not irreducible for $K$.
+
 \begin{proof}
-  
+  Let $\bb{L}$ be a subfield of $\bb{C}$ and $A\in M_n(\bb{L})$. Then as
+  above the matrix $A$ is semisimple only when its minimal polynomial
+  is the product of distinct irreducible factors. If $A$ is irreducible as
+  a complex matrix then it will definitely be irreducible as a matrix
+  over $\bb{L}$. On the other hand if the minimal polynomial of $A$
+  is the product of distinct irreducible factors over $\bb{L}$ then it
+  will factor into linear terms when we move to $\bb{C}$. However none
+  of these terms will be shared between factors in $\bb{L}$ as otherwise
+  it would not be a proper minimal polynomial.
+
+  Therefore a matrix is semisimple on a subfield of the complex numbers
+  if and only if it is semisimple over the complex numbers themselves.
 \end{proof}
+
 
 \sk
 
