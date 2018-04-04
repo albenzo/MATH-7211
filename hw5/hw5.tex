@@ -93,6 +93,17 @@ though neither element is zero.
   By Theorem $7.1.28$ from Adkins' book a ring is semisimple if and
   only if every $R$-module is semisimple. Since $M_n(R)$ is an $R$-module
   it is semisimple.
+
+  Let $R=\bigoplus_{i\in I}S_i$ be the decomposition of $R$ into simple modules.
+  As in the proof of that $M_n(R)$ is simple if $R$ is simple decompose
+  $M_n(R)$ into the direct sum of column vectors $c_j(M_n(R))$ for
+  $0<j\leq n$. Since the $M_n(S_i)$ are submodules of $M_n(R)$ we can
+  decompose the column as $c_j(M_n(R))=\bigoplus_{i\in I}(M_n(S_i)\cap c_j(M_n(R)))$
+  which are simple submodules. It then follows that
+  $M_n(R)=\bigoplus_{j=1}^n\bigoplus_{i\in I}(M_n(S_i)\cap c_j(M_n(R)))$ is a decomposition of
+  $M_n(R)$ into simple modules.
+
+  Therefore if $R$ is semisimple then $M_n(R)$ is semisimple.
 \end{proof}
 
 \sk
