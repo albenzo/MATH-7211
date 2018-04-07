@@ -1,0 +1,179 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{enumerate}
+\usepackage[all,cmtip]{xy}
+
+\textwidth=15cm \textheight=22cm \topmargin=0.5cm \oddsidemargin=0.5cm \evensidemargin=0.5cm
+
+\newcommand{\sk}{\vskip 10mm}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\ra}{\rightarrow}
+
+\theoremstyle{plain}
+\newtheorem{problem}{Problem}
+\newtheorem{lemma}{Lemma}[problem]
+
+\theoremstyle{remark}
+\newtheorem{tpart}{}[problem]
+\newtheorem*{ppart}{}
+
+\begin{document}
+
+\begin{problem}[7.26]
+  Let $M$ and $N$ be finitely generated $R$-modules over a PID $R$. Compute
+  $M\otimes_R N$. As a special case, if $M$ is a finite abelian group with
+  invariant factors $s_1,\ldots,s_t$ (where as usual we assume that $s_i$
+  divides $s_{i+1}$), show that $M\otimes_{\bb{Z}}M$ is a finite group of order
+  $\prod_{j=1}^ts_j^{2t-2j+1}$.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[7.30]
+  \begin{enumerate}
+  \item[(a)] Let $F$ be a field and $K$ a field containing $F$.
+    If $f(X)\in F[X]$, show that there is an isomorphism of $K$-algebras:
+    \[
+      K\otimes_F(F[X]/\langle f(X)\rangle\cong K[X]/\langle f(X)\rangle)
+    \]
+  \item[(b)] By choosing $F, f(x)$, and $K$ appropriately, find an
+    example of two fields $K$ and $L$ containing $F$ such that the
+    $F$-algebra $K\otimes_F L$ has nilpotent elements.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+
+\begin{problem}[7.31]
+  Let $F$ be a field. Show that $F[X,Y]\cong F[X]\otimes_F F[Y]$ where the
+  isomorphism is an isomorphism of $F$-algebras.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[7.34]
+  Let $F$ be a field, $V$ and $W$ finite-dimensional vector spaces over $F$,
+  and let $T\in\text{End}_F(V),SS\in\text{End}(W)$.
+  \begin{enumerate}
+  \item[(a)] If $\alpha$ is an eigenvalue of $S$ and $\beta$ is an eigenvalue of
+    $T$, show that the product $\alpha\beta$ is an eigenvalue of $S\otimes T$.
+  \item[(b)] If $S$ and $T$ are diagonalizable, show that $S\otimes T$
+    is diagonalizable.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[10.4.3]
+  Show that $\bb{C}\otimes_{\bb{R}}\bb{C}$ and $\bb{C}\otimes_{\bb{C}}\bb{C}$
+  are both left $\bb{R}$ modules but are not isomorphic as $\bb{R}$-modules.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[10.4.5]
+  Let $A$ be a finite abelian group of order $n$ and let $p^k$ be the largest
+  power of a prime $p$ dividing $n$. Prove that
+  $\bb{Z}/p^k\bb{Z}\otimes_{\bb{Z}}A$ is isomorphic to the Sylow $p$-subgroup
+  of $A$.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[10.4.10]
+  Suppose $R$ is commutative and $N\cong R^n$ is a free $R$-module of rank
+  $n$ with $R$-module basis $e_1,\ldots,e_n$.
+  \begin{enumerate}
+  \item[(a)] For any nonzero $R$-module $M$ show that every element
+    of $M\otimes N$ can be written uniquely in the form
+    $\sum_{i=1}^n m_i\otimes e_i$ where $m_i\in M$. Deduce that if
+    $\sum_{i=1}^nm_i\otimes e_i=0$ in $M\otimes N$ then $m_i=0$ for
+    $i=1,\ldots,n$.
+  \item[(b)] Show that if $\sum m_i\otimes n_i=0$ in $M\otimes N$ where the
+    $n_i$ are merely assumed to be $R$-linearly independent then it is not
+    necessarily true that all the $m_i$ are 0. [Consider
+    $R=\bb{Z},n=1,M=\bb{Z}/2\bb{Z}$, and the element $1\otimes 2$.]
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[10.4.24]
+  Prove that the extension of scalars from $\bb{Z}$ to the Gaussian integers
+  $\bb{Z}[i]$ of the ring $\bb{R}$ is isomorphic to $\bb{C}$ as a ring:
+  $\bb{Z}[i]\otimes_{\bb{Z}}\bb{R}\cong\bb{C}$ as rings.
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+\sk
+
+\begin{problem}[10.4.27]
+  \begin{enumerate}
+  \item[(a)] Write down a formula for the multiplication of two elements
+    $a\cdot 1+b\cdot e_2+c\cdot e_3+d\cdot e_4$ and
+    $a'\cdot 1+b'\cdot e_2+c'\cdot e_3+d'\cdot e_4$ in the example
+    $A=\bb{C}\otimes_{\bb{R}}\bb{C}$ following proposition 21
+    (where $1=1\otimes 1$ is the identity of $A$).
+  \item[(b)] Let $\epsilon_1=\frac{1}{2}(1\otimes 1+i\otimes i)$ and
+    $\epsilon_2=\frac{1}{2}(1\otimes 1-i\otimes i)$. Show that
+    $\epsilon_1\epsilon_2=0,\epsilon_1+\epsilon_2=1$, and
+    $\epsilon_j^2=\epsilon_j$ for $j=1,2$ ($\epsilon_1$ and $\epsilon_2$ are
+    called orthogonal idempotents in $A$). Deduce that $A$ is isomorphic
+    as a ring to the direct product of two principle ideals:
+    $A\cong A\epsilon_1\times A\epsilon_2$ (cf. Exercise 1, Section 7.6).
+  \item[(c)] Prove that the map
+    $\varphi:\bb{C}\otimes\bb{C}\rightarrow\bb{C}\times\bb{C}$ by
+    $\varphi(z_1,z_2)=(z_1z_2,z_1\bar{z_2})$, where $\bar{z_2}$
+    denotes the complex conjugate of $z_2$, is an $\bb{R}$-bilinear map.
+  \item[(d)] Let $\Phi$ be the $\bb{R}$-module homomorphism from $A$ to
+    $\bb{C}\times\bb{C}$ obtained from $\varphi$ in (c). Show that
+    $\Phi(\epsilon_1)=(0,1)$ and $\Phi(\epsilon_2)=(1,0)$. Show also that $\Phi$
+    is $\bb{C}$-linear, where the action of $\bb{C}$ is on the left tensor
+    factor in A and on both factors in $\bb{C}\times\bb{C}$. Deduce that
+    $\Phi$ is surjective. Show that $\Phi$ is a $\bb{C}$-algebra isomorphism.
+  \end{enumerate}
+\end{problem}
+
+\begin{proof}
+  
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
