@@ -13,6 +13,7 @@
 \newcommand{\sk}{\vskip 10mm}
 \newcommand{\bb}[1]{\mathbb{#1}}
 \newcommand{\ra}{\rightarrow}
+\newcommand{\wt}[1]{\widetilde{#1}}
 
 \theoremstyle{plain}
 \newtheorem{problem}{Problem}
@@ -33,7 +34,37 @@
 \end{problem}
 
 \begin{proof}
-  
+  By the structure theorem for finitely generated modules over a PID we
+  have that
+  \[
+    M\cong R^r\oplus R/(a_i)\oplus\cdots \oplus R/(a_m)
+  \]
+  and
+  \[
+    N\cong R^s\oplus R/(b_1)\oplus \cdots \oplus R/(b_n)
+  \]
+  where $a_i|a_{i+1}$ and $b_i|b_{i+1}$
+  Then by Theorem 2.18 of Adkins' book the tensor $M\otimes_R N$ distributes over
+  the direct sum. Together with $R/(a_i)\otimes_R R/(b_j)\cong R/(a_i+b_j)$ we get that
+  \[
+    M\otimes_R N\cong \bigoplus_{0<i\leq m,0<j\leq n}\left(R/(a_i+b_j)\right)\bigoplus_{0<i\leq m}\left(R/(a_i)\otimes_R R^t\right)\bigoplus_{0<j\leq n}\left(R^s\otimes_R R/(b_j)\right)
+  \]
+
+
+  If we let $M$ be a finite abelian group with invariant factor decomposition
+  \[
+    M\cong \bigoplus_{0<i\leq t}\bb{Z}_{s_i}
+  \]
+
+  Then, from above, the tensor of $M$ with itself is
+  \[
+    M\otimes_{\bb{Z}} M \cong \bigoplus_{0<i,j\leq t}\bb{Z}_{\gcd(s_i,s_j)}
+  \]
+
+  However since $s_i|s_j$ for $i\leq j$ we have that $\gcd(s_i,s_j)$. This will
+  cause $2t-1$ copies of $\bb{Z}_{s_1}$ to appear, $2t-3$ for $\bb{Z}_{s_2}$, and so on until
+  we have only a single copy of $\bb{Z}_{s_t}$. Thus $M\otimes_{\bb{Z}}M$ will have
+  order $\prod_{j=1}^ts_j^{2t-2j+1}$.
 \end{proof}
 
 \sk
@@ -52,7 +83,45 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item[(a)] Define a map $\varphi:K\times F[x]/\langle g(x)\rangle\rightarrow K[x]/\langle g(x)\rangle$ via
+    \[
+      \varphi(k,f)= kf
+    \]
+    Now briefly verify that $\varphi$ is $F$-middle linear
+    \begin{align*}
+      \varphi(ak,fb) &= akfb &= a\varphi(k,f)b\\
+      \varphi(k_1+k_2,f)&= k_1 f+k_2 f &= \varphi(k_1,f)+\varphi(k_2,f)\\
+      \varphi(k,f_1+f_2)&= kf_1+kf_2 &= \varphi(k,f_1)+\varphi(k,f_2)\\
+      \varphi(ka,f) &= kaf &= \varphi(k,af)\\
+    \end{align*}
+
+    Since $\varphi$ is $F$-middle linear it induces a map
+    $\wt{\varphi}:K\otimes_F F[x]/\langle g(x)\rangle\rightarrow K[x]/\langle g(x)\rangle$. Now define
+    a map $\psi:K[x]/\langle g(x)\rangle\rightarrow K\otimes_F F[x]/\langle g(x)\rangle$ by $\psi(kx^i)=k\otimes x^i$ and
+    extending linearly. We will now show that $\wt{\varphi}$ and $\psi$ are inverses.
+
+    First $\wt{\varphi}\circ\psi$
+    \begin{align*}
+      \wt{\varphi}\circ\psi(\sum a_ix^i) &= \wt{\varphi}(\sum a_i \otimes x^i)\\
+                        &= \sum a_i x^i\\
+    \end{align*}
+
+    Then for $\psi\circ\wt{\varphi}$
+    \begin{align*}
+      \psi\circ\wt{\varphi}(k\otimes\sum a_i x^i) &= \psi\circ\wt{\varphi}(\sum k\otimes a_i x^i)\\
+                            &= \psi(\sum\wt{\varphi}(k\otimes a_i x^i))\\
+                            &= \psi(\sum ka_i x^i)\\
+                            &= \sum \psi(ka_ix^i)\\
+                            &= \sum ka_i\otimes x^i\\
+                            &= \sum k\otimes a_i x^i\\
+    \end{align*}
+    Since $\wt{\varphi}$ has an inverse it is indeed an isomorphism. Which
+    shows that $K\otimes_F F[x]/\langle g(x)\rangle$ is isomorphic to $K[x]/\langle g(x)\rangle$.
+  \item[(b)] Let $F$ be rational functions of $t$ with coefficients in $\bb{Z}_2$.
+    Then let $K$ be the splitting field of $x^2-t$. Then in $K\otimes_F K$ the
+    element $t^{1/2}\otimes 1+1\otimes t^{1/2}$ is zero when squared making it an idempotent.
+  \end{enumerate}
 \end{proof}
 
 \sk
@@ -64,14 +133,42 @@
 \end{problem}
 
 \begin{proof}
-  
+  Define $\varphi:F[x]\times F[y]\rightarrow F[x]\times F[y]$ via
+  \[
+    \varphi(\sum_i a_i x^i,\sum_j b_j x^j) = \sum_{i,j}a_i b_j x^i y^j
+  \]
+  Since we are in a polynomial ring over a field it follows that
+  $\varphi$ is $F$-middle linear. As such there is a map
+  $\wt{\varphi}:F[x]\otimes F[y]\rightarrow F[x,y]$ that mimics $\varphi$.
+
+  Now define $\psi:F[x,y]\rightarrow F[x]\otimes F[y]$ via $\psi(cx^i y^j)=c(x^i\otimes y^j)$ and
+  extending linearly. We will now show that $\wt{\varphi}$ and $\psi$ are
+  inverses. Since both of these maps are linear we only need to
+  verify them on either $cx^i y^j$ and $a_i x^i\otimes b_j y^j$.
+
+  First for $\wt{\varphi}\circ \psi$ we have
+  \begin{align*}
+    \wt{\varphi}\circ\psi(cx^i y^j) &= \wt{\varphi}(c(x^i\otimes y^j))\\
+                     &= \wt{\varphi}(cx^i\otimes y^j)\\
+                     &= cx^i y^j\\
+  \end{align*}
+
+  Then for $\psi\circ\wt{\varphi}$
+  \begin{align*}
+    \psi\circ\wt{\varphi}(a_i x^i \otimes b_j y^j) &= \psi (a_i b_j x^i y^j)\\
+                             &= a_i b_j (x^i\otimes y^j)\\
+                             &= a_i x^i \otimes b_j y^j\\
+  \end{align*}
+
+  Thus $\wt{\varphi}$ is an isomorphism which shows that $F[x,y]$ is isomorphic
+  to $F[x]\otimes F[y]$.
 \end{proof}
 
 \sk
 
 \begin{problem}[7.34]
   Let $F$ be a field, $V$ and $W$ finite-dimensional vector spaces over $F$,
-  and let $T\in\text{End}_F(V),SS\in\text{End}(W)$.
+  and let $T\in\text{End}_F(V),S\in\text{End}(W)$.
   \begin{enumerate}
   \item[(a)] If $\alpha$ is an eigenvalue of $S$ and $\beta$ is an eigenvalue of
     $T$, show that the product $\alpha\beta$ is an eigenvalue of $S\otimes T$.
@@ -175,5 +272,5 @@
   
 \end{proof}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \end{document}
