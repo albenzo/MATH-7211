@@ -189,7 +189,16 @@
 \end{problem}
 
 \begin{proof}
-  
+  The complex numbers can be given the bimodule structures
+  $(\bb{R},\bb{R}),(\bb{R},\bb{C})$, and $(\bb{C},\bb{R})$ by left
+  and right multiplication from the correct field. As such both of the
+  above tensors can be given be given a left $\bb{R}$-module structure.
+
+  To show they are not isomorphic consider that in $\bb{C}\otimes_{\bb{C}}\bb{C}$
+  we have $1\otimes 1=i^4\otimes i^4=i\otimes -i$. However in $\bb{C}\otimes_{\bb{R}}\bb{C}$
+  $1\otimes 1$ has an equivalence class that is entirely real since only real numbers
+  can travel between the sides of the tensor. As such the two cannot be
+  isomorphic.
 \end{proof}
 
 \sk
@@ -202,7 +211,13 @@
 \end{problem}
 
 \begin{proof}
-  
+  Let $Syl_p(A)$ denote the Sylow $p$-subgroup of $A$. Then by theorem
+  2.18 from Adkins' we have that
+  \[
+    \bb{Z}_{p^k}\otimes_{\bb{Z}} A \cong \bigoplus_{q\ prime}\bb{Z}_{p^k}\otimes_{\bb{Z}} Syl_q(A)
+  \]
+  Now we will show that $\bb{Z}_{p^k}\otimes_{\bb{Z}}Syl_q(A)$ is zero when
+  $q\neq p$ and is isomorphic to $Syl_p(A)$ otherwise.
 \end{proof}
 
 \sk
