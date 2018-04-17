@@ -168,7 +168,7 @@
 
 \begin{problem}[7.34]
   Let $F$ be a field, $V$ and $W$ finite-dimensional vector spaces over $F$,
-  and let $T\in\text{End}_F(V),S\in\text{End}(W)$.
+  and let $T\in\text{End}_F(V),S\in\text{End}_F(W)$.
   \begin{enumerate}
   \item[(a)] If $\alpha$ is an eigenvalue of $S$ and $\beta$ is an eigenvalue of
     $T$, show that the product $\alpha\beta$ is an eigenvalue of $S\otimes T$.
@@ -178,7 +178,18 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item[(a)] Let $u,v$ be eigenvectors with eigenvalues $\alpha,\beta$ for linear
+    transformations $S$ and $T$ respectively. Then
+    \[
+      S\otimes T(u\otimes v) = S(u)\otimes T(v)= \alpha u\otimes \beta v = \alpha\beta (u\otimes v)
+    \]
+  \item[(b)] Since $S$ and $T$ are diagonalizable they each have a number
+    of distinct eigenvalues equal to the dimension of the space they act on.
+    By the previous problem the product of two eigenvalues gives an eigenvalue
+    which means there will be $\dim(V)\dim(W)=\dim(V\otimes W)$ distinct eigenvalues
+    for $S\otimes T$ making it diagonalizable.
+  \end{enumerate}
 \end{proof}
 
 \sk
@@ -218,6 +229,24 @@
   \]
   Now we will show that $\bb{Z}_{p^k}\otimes_{\bb{Z}}Syl_q(A)$ is zero when
   $q\neq p$ and is isomorphic to $Syl_p(A)$ otherwise.
+
+  Let's start when $p\neq q$. Then let $q^l$ be the highest power of
+  $q$ that divides $n$. As $p$ and $q$ are relatively prime there
+  exist $\alpha$ and $\beta$ such that $\alpha p^k+\beta q^l=1$. Then given
+  $x\otimes a\in \bb{Z}_{p^k}\otimes_{\bb{Z}} Syl_q(A)$ we have
+  \[
+    x\otimes a = x(\alpha p^k+\beta q^l)\otimes a = (x\alpha p^k+x\beta q^l)\otimes a = x\otimes q^l a= x\otimes 0 = x \otimes p^k0 = x p^k\otimes 0 = 0\otimes 0
+  \]
+  which shows that every element of $\bb{Z}_{p^k}\otimes_{\bb{Z}} Syl_q(A)$ is
+  trivial making the group itself trivial.
+
+  The fact that $\bb{Z}_{p^k}\otimes_{\bb{Z}} Syl_p(A)\cong Syl_p(A)$ follows from
+  both constituents have size $p^k$. As such the inner action of $\bb{Z}$
+  is equivalent to the corresponding action by $\bb{Z}_{p^k}$. Thus
+  $\bb{Z}_{p^k}\otimes_{\bb{Z}} Syl_p(A)$ is isomorphic to
+  $\bb{Z}_{p^k}\otimes_{\bb{Z}_{p^k}} Syl_p(A)$ which is then isomorphic to $Syl_p(A)$.
+
+  Therefore $\bb{Z}_{p^k}\otimes_{\bb{Z}} A$ is isomorphic to the Sylow $p$-subgroup of $A$.
 \end{proof}
 
 \sk
