@@ -268,7 +268,11 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item[(a)]
+  \item[(b)] Let $R=\bb{Z},n=1,M=\bb{Z}_2$. Then $1\otimes 2=1\cdot 2\otimes 1=0\otimes 1=0$ which
+    fulfills the conditions lain out above.
+  \end{enumerate}
 \end{proof}
 
 \sk
@@ -280,7 +284,32 @@
 \end{problem}
 
 \begin{proof}
-  
+  Let $\varphi:\bb{Z}[i]\times\bb{R}\rightarrow \bb{C}$ be defined via $\varphi(k,x)=kx$. Since it
+  is effectively the same map that we defined before we can see that it
+  is $\bb{Z}$-middle linear. As such there is an induced map
+  $\wt{\varphi}:\bb{Z}[i]\otimes_{\bb{Z}}\bb{R}\rightarrow\bb{C}$ where $\wt{\varphi}(k\otimes x)=kx$.
+  Define $\psi:\bb{C}\rightarrow \bb{Z}[i]\otimes_{\bb{Z}}\bb{R}$ via $\psi(x)=1\otimes x$ and $\psi(ix)=i\otimes x$
+  when $x\in \bb{R}$ then extending linearly. We will now show that $\wt{\varphi}$ and
+  $\psi$ are inverses.
+
+  First for $\psi\circ\wt{\varphi}$ we have
+  \begin{align*}
+    \psi\circ\wt{\varphi}((a+bi)\otimes x) &= \psi(ax+bxi)\\
+                        &= \psi(ax)+\psi(bxi)\\
+                        &= 1\otimes ax + i\otimes bx\\
+                        &= a\otimes x + bi\otimes x\\
+                        &= (a+bi)\otimes x
+  \end{align*}
+
+  Then for $\wt{\varphi}\circ\psi$
+  \begin{align*}
+    \wt{\varphi}\circ\psi(u+iv) &= \wt{\varphi}(1\otimes u+i\otimes v)\\
+                   &= \wt{\varphi}(1\otimes u)+\wt{\varphi}(i\otimes v)\\
+                   &= u+iv
+  \end{align*}
+
+  Thus $\psi$ and $\wt{\varphi}$ are inverses which makes $\wt{\varphi}$ an isomorphism
+  which shows that $\bb{C}$ is isomorphic to $\bb{Z}[i]\otimes \bb{R}$.
 \end{proof}
 
 \sk
