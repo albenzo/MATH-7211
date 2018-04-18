@@ -205,11 +205,11 @@
   and right multiplication from the correct field. As such both of the
   above tensors can be given be given a left $\bb{R}$-module structure.
 
-  To show they are not isomorphic consider that in $\bb{C}\otimes_{\bb{C}}\bb{C}$
-  we have $1\otimes 1=i^4\otimes i^4=i\otimes -i$. However in $\bb{C}\otimes_{\bb{R}}\bb{C}$
-  $1\otimes 1$ has an equivalence class that is entirely real since only real numbers
-  can travel between the sides of the tensor. As such the two cannot be
-  isomorphic.
+  To show they are not isomorphic first note that from Dummit  10.4.19
+  we know that $\bb{C}\otimes_{\bb{C}}\bb{C}\cong\bb{C}$ which has rank $2$ as
+  a free $\bb{R}$ module. Meanwhile $\bb{C}\otimes_{\bb{R}}\bb{C}$ has free
+  rank $4$ as a left $\bb{R}$-module (Dummit pg. 375) which implies that they cannot
+  be isomorphic.
 \end{proof}
 
 \sk
@@ -270,8 +270,8 @@
 \begin{proof}
   \begin{enumerate}
   \item[(a)]
-  \item[(b)] Let $R=\bb{Z},n=1,M=\bb{Z}_2$. Then $1\otimes 2=1\cdot 2\otimes 1=0\otimes 1=0$ which
-    fulfills the conditions lain out above.
+  \item[(b)] Let $R=\bb{Z},n=1,M=\bb{Z}_2$, and $N=\bb{Z}$. Then $1\otimes 2=1\cdot 2\otimes 1=0\otimes 1=0$
+    which fulfills the conditions lain out above.
   \end{enumerate}
 \end{proof}
 
@@ -342,7 +342,15 @@
 \end{problem}
 
 \begin{proof}
-  
+  \begin{enumerate}
+  \item[(a)] Multiply it out to get
+    \[
+      a a' e_{1}^{2} + a' b e_{1} e_{2} + a b' e_{1} e_{2} + b b' e_{2}^{2} + a' c e_{1} e_{3} + a c' e_{1} e_{3} + b' c e_{2} e_{3} + b c' e_{2} e_{3} + c c' e_{3}^{2} + a' d e_{1} e_{4} + a d' e_{1} e_{4} + b' d e_{2} e_{4} + b d' e_{2} e_{4} + c' d e_{3} e_{4} + c d' e_{3} e_{4} + d d' e_{4}^{2}
+    \]
+  \item[(b)]
+  \item[(c)]
+  \item[(d)]
+  \end{enumerate}
 \end{proof}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
