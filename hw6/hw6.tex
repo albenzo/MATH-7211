@@ -343,12 +343,45 @@
 
 \begin{proof}
   \begin{enumerate}
-  \item[(a)] Multiply it out to get
+  \item[(a)] Let $e_1=1\otimes 1, e_2=1\otimes i, e_3= i\otimes 1, e_4 = i\otimes i. $. Then multiply out to get
     \[
-      a a' e_{1}^{2} + a' b e_{1} e_{2} + a b' e_{1} e_{2} + b b' e_{2}^{2} + a' c e_{1} e_{3} + a c' e_{1} e_{3} + b' c e_{2} e_{3} + b c' e_{2} e_{3} + c c' e_{3}^{2} + a' d e_{1} e_{4} + a d' e_{1} e_{4} + b' d e_{2} e_{4} + b d' e_{2} e_{4} + c' d e_{3} e_{4} + c d' e_{3} e_{4} + d d' e_{4}^{2}
+      a a' e_{1}^{2} + a' b e_{1} e_{2} + a b' e_{1} e_{2} + b b' e_{2}^{2} + a' c e_{1} e_{3} + a c' e_{1} e_{3} + b' c e_{2} e_{3} + b c' e_{2} e_{3} + c c' e_{3}^{2} + a' d e_{1} e_{4} + a d' e_{1} e_{4}
     \]
-  \item[(b)]
-  \item[(c)]
+    \[
+      + b' d e_{2} e_{4} + b d' e_{2} e_{4} + c' d e_{3} e_{4} + c d' e_{3} e_{4} + d d' e_{4}^{2}
+    \]
+    Evaluating the multiplication gets us
+    \[
+      aa'e_1+a'be_2+ab'e_2 +bb'(-e_1)+a'ce_3+ac'e_3+b'ce_4+bc'e_4+cc'(-e_1)+a'de_4+ad'e_4+b'd(-e_3)+bd'(-e_3)
+    \]
+    \[
+      c'd(-e_2)+cd'(-e_2)+dd'e_1
+    \]
+    Which we can then simplify to
+    \[
+      (aa'-bb'-cc'+dd')e_1+(a'b+ab'-c'd-cd')e_2+(a'c+ac'-b'd-bd')e_3+(b'c+bc'+a'd+ad')e_4
+    \]
+  \item[(b)] First adding
+    \[
+      \epsilon_1+\epsilon_2=\frac{1}{2}(1\otimes 1+i\otimes i)+\frac{1}{2}(1\otimes 1-i\otimes i)=\frac{2}{2}(1\otimes 1)=1\otimes 1=1
+    \]
+    Then multiplying
+    \[
+      \epsilon_1 \epsilon_2=\frac{1}{2}(1\otimes 1+i\otimes i)\frac{1}{2}(1\otimes 1-i\otimes i)=\frac{1}{4}(1\otimes 1+(-1\otimes -1))=\frac{1}{4}(1\otimes 1-1\otimes 1)=0
+    \]
+    Squaring $\epsilon_1$ gets you
+    \[
+      \epsilon_1^2=\frac{1}{4}(1\otimes 1+1\otimes 1+i\otimes i +i\otimes i)=\frac{1}{2}(1\otimes 1+i\otimes i)=\epsilon_1
+    \]
+    Similarly for $\epsilon_2$
+    \[
+      \epsilon_2^2=\frac{1}{4}(1\otimes 1+1\otimes 1-i\otimes i -i\otimes i)=\frac{1}{2}(1\otimes 1-i\otimes i)=\epsilon_2
+    \]
+    Then from exercise 7.6.1 from Dummit we have that $A\cong A\epsilon_1\times A\epsilon_2$.
+  \item[(c)] Since the space $\bb{C}\times \bb{C}$ can be treated as a vector
+    space over $\bb{R}$. This along with the fact that we can pull
+    real constants out of the complex conjugate implies that $\varphi$ is
+    $\bb{R}$-bilinear.
   \item[(d)]
   \end{enumerate}
 \end{proof}
