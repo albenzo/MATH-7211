@@ -382,7 +382,29 @@
     space over $\bb{R}$. This along with the fact that we can pull
     real constants out of the complex conjugate implies that $\varphi$ is
     $\bb{R}$-bilinear.
-  \item[(d)]
+  \item[(d)] First we calculate $\Phi(\epsilon_1)$ directly
+    \[
+      \Phi(\epsilon_1)=\Phi(\frac{1}{2}(1\otimes 1+i\otimes i)) =\frac{1}{2}(\Phi(1\otimes 1)+\Phi(i\otimes i)) = \frac{1}{2}((1,1)+(-1,1)) = (0,1)
+    \]
+    Similarly for $\Phi(\epsilon_2)$ we have
+    \[
+      \Phi(\epsilon_1)=\Phi(\frac{1}{2}(1\otimes 1-i\otimes i)) =\frac{1}{2}(\Phi(1\otimes 1)-\Phi(i\otimes i)) = \frac{1}{2}((1,1)-(-1,1)) = (1,0)
+    \]
+    Next we show that $\Phi$ is $\bb{C}$-linear.
+    \[
+      \Phi(w(z_1\otimes z_2))=\Phi(wz_1\otimes z_2) = (wz_1z_2,wz_1\bar{z_2}) = w(z_1z_2,z_1\bar{z_2})=w\Phi(z_1\otimes z_2)
+    \]
+    Since $\Phi$ is $\bb{C}$-linear and we have elements that map to $(1,0)$
+    and $(0,1)$ it must be surjective as this allows us to reach any
+    element using linearity.
+
+    To see that $\Phi$ is injective note that if $\Phi(z_1\otimes z_2)=0$ then either
+    $z_1$ or $z_2$ must be zero since $\bb{C}$ is a field. Then
+    \[
+      z_1\otimes 0 = 0(z_1\otimes 0)= 0\otimes 0 = 0
+    \]
+    The case for $z_1=0$ follows similarly. As such the kernel of $\Phi$ is trivial
+    which implies that $\Phi$ is in fact an isomorphism.
   \end{enumerate}
 \end{proof}
 
