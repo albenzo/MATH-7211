@@ -185,9 +185,9 @@
       S\otimes T(u\otimes v) = S(u)\otimes T(v)= \alpha u\otimes \beta v = \alpha\beta (u\otimes v)
     \]
   \item[(b)] Since $S$ and $T$ are diagonalizable they each have a number
-    of distinct eigenvalues equal to the dimension of the space they act on.
+    of eigenvalues equal to the dimension of the space they act on.
     By the previous problem the product of two eigenvalues gives an eigenvalue
-    which means there will be $\dim(V)\dim(W)=\dim(V\otimes W)$ distinct eigenvalues
+    which means there will be $\dim(V)\dim(W)=\dim(V\otimes W)$ eigenvalues
     for $S\otimes T$ making it diagonalizable.
   \end{enumerate}
 \end{proof}
@@ -269,7 +269,14 @@
 
 \begin{proof}
   \begin{enumerate}
-  \item[(a)]
+  \item[(a)] Let $m\otimes n\in M\otimes_R N$. Then since $N$ is free we can rewrite $m\otimes n$ as
+    \[
+      m\otimes n = m \otimes \left(\sum_1^n a_i e_i\right) = \sum_i^n m\otimes a_i e_i= \sum_1^n a_i m \otimes e_i
+    \]
+    Since this process is entirely reversible if another element had the same
+    decomposition then it would be equal to the original value. As such we know
+    that $\sum_1^n 0\otimes e_i=0 $ and by uniqueness it follows that this is the only way of
+    writing zero.
   \item[(b)] Let $R=\bb{Z},n=1,M=\bb{Z}_2$, and $N=\bb{Z}$. Then $1\otimes 2=1\cdot 2\otimes 1=0\otimes 1=0$
     which fulfills the conditions lain out above.
   \end{enumerate}
