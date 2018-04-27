@@ -1,0 +1,139 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amscd}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{listings}
+\usepackage{enumerate}
+\usepackage[all,cmtip]{xy}
+
+\textwidth=15cm \textheight=22cm \topmargin=0.5cm \oddsidemargin=0.5cm \evensidemargin=0.5cm
+
+\newcommand{\sk}{\vskip 10mm}
+\newcommand{\bb}[1]{\mathbb{#1}}
+\newcommand{\ra}{\rightarrow}
+
+\theoremstyle{plain}
+\newtheorem{problem}{Problem}
+\newtheorem{lemma}{Lemma}[problem]
+
+\theoremstyle{remark}
+\newtheorem{tpart}{}[problem]
+\newtheorem*{ppart}{}
+
+\begin{document}
+
+\begin{problem}
+  Let $G=C_2=\langle a:a^2=1\rangle$, and let $V=F^2$ (where $F$ is a field).
+  For $(\alpha,\beta)\in V$, define the action of $G$ on $V$ by
+  $1(\alpha,\beta)=(\alpha,\beta)$ and $a(\alpha,\beta)=(\beta,\alpha)$, and
+  extend by linearity to make $V$ into an $FG$-module. Find all $FG$-submodules
+  of $V$.
+\end{problem}
+
+\sk
+
+\begin{problem}
+  If $G=C_2\times C_2=\langle a,b:a^2=b^2=1,ab=ba\rangle$, write the real group
+  ring $\bb{R}G$ as a direct sum of $\bb{R}G$-submodules, each of which
+  is $1$-dimensional over $\bb{R}$.
+\end{problem}
+
+\sk
+
+\begin{problem}
+  Let $G=D_{12}=\langle a,b:a^6=b^2=1,b^{-1}ab=a^{-1}\rangle$.
+  Define matrices $A,B,C,D$ over $\bb{C}$ by
+  \[
+    A
+    =
+    \left[
+      \begin{array}{cc}
+        e^{i\pi/3} & 0\\
+        0 & e^{i\pi/3}\\
+      \end{array}
+    \right],
+    B
+    =
+    \left[
+      \begin{array}{cc}
+        0 & 1\\
+        1 & 0\\
+      \end{array}
+    \right],
+    C
+    =
+    \left[
+      \begin{array}{cc}
+        1/2 & \sqrt{3}/2\\
+        -\sqrt{3}/2 & 1/2\\
+      \end{array}
+    \right],
+    D
+    =
+    \left[
+      \begin{array}{cc}
+        1 & 0\\
+        0 & -1\\
+      \end{array}
+    \right]
+  \]
+  \begin{enumerate}
+  \item[(a)] Verify that each of the functions
+    $\rho_k:G\rightarrow\text{GL}(2,\bb{C})\ (k=1,2,3,4)$, given by
+    $(i)\ \rho_1(a^r b^s)=A^r B^s,\quad
+    (ii)\ \rho_2(a^r b^s)= A^{3r}(-B)^s,\quad
+    (iii)\ \rho_3(a^r b^s)=(-A)^r B^s,\quad
+    (iv)\ \rho_4(a^r b^s)=C^r D^s$
+    for $0\leq r\leq 5, 0\leq s\leq 1$, is a representation of $G$.
+  \item[(b)] Which of the representations $\rho_k$ are faithful?
+  \item[(c)] Which of the representations are equivalent?
+  \item[(d)] Which are irreducible?
+  \end{enumerate}
+\end{problem}
+
+\sk
+
+\begin{problem}
+  Find the missing row in the following character table:
+  \[
+    \begin{array}{c|ccccc}
+      \text{Order of the conjugacy class} & (1) & (3) & (6) & (6) & (8)\\
+      \text{Conjugacy class} & Cl(1) & Cl(a) & Cl(b) & Cl(c) & Cl(d)\\
+      \hline
+      \chi_1 & 1 & 1 & 1 & 1 & 1\\
+      \chi_2 & 1 & 1 & -1 & -1 & 1\\
+      \chi_3 & 3 & -1 & 1 & -1 & 0\\
+      \chi_4 & 3 & -1 & -1 & 1 & 0\\
+      \chi_5 &&&&&\\
+    \end{array}
+  \]
+\end{problem}
+
+\sk
+
+\begin{problem}
+  The character table of $S_3$ is
+  \[
+    \begin{array}{c|ccc}
+      \text{Conjugacy class} & Cl(1) & Cl((1\ 2)) & Cl((1\ 2\ 3))\\
+      \hline
+      \chi_1 & 1 & 1 & 1\\
+      \chi_2 & 1 & -1 & 1\\
+      \chi_3 & 2 & 0 & -1\\
+    \end{array}
+  \]
+  Let $\phi$ be a character such that
+  $\phi(1)=5,\phi((1\ 2))=1,\phi((1\ 2\ 3))=2$.
+  \begin{enumerate}
+  \item[(a)] Compute the inner products
+    $\langle \phi,\chi_1\rangle,\langle \phi,\chi_2\rangle$,
+    and $\langle \phi,\chi_3\rangle$.
+  \item[(b)] Write the character $\phi$ as a linear combination of
+    $\chi_1,\chi_2,\chi_3$.
+  \end{enumerate}
+\end{problem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
