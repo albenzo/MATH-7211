@@ -93,6 +93,8 @@
   \end{enumerate}
 \end{problem}
 
+
+
 \sk
 
 \begin{problem}
@@ -135,5 +137,39 @@
   \end{enumerate}
 \end{problem}
 
+
+Code Storage:
+\begin{verbatim}
+A = Matrix(SR,[[e^(i*pi/3),0],[0,e^(i*pi/3)]])
+B = Matrix(SR,[[0,1],[1,0]])
+C = Matrix(SR,[[1/2,sqrt(3)/2],[-sqrt(3)/2,1/2]])
+D = Matrix(SR,[[1,0],[0,-1]])
+G = DihedralGroup(6)
+r,s = G.gens()
+
+def p1(g):
+    if g in [r^i for i in range(0,6)]:
+        return A^([r^i for i in range(0,6)].index(g))
+    elif g in [r^i*s for i in range(0,6)]:
+        return A^([r^i*s for i in range(0,6)].index(g))*B
+
+def p2(g):
+    if g in [r^i for i in range(0,6)]:
+        return A^(3*[r^i for i in range(0,6)].index(g))
+    elif g in [r^i*s for i in range(0,6)]:
+        return A^(3*[r^i*s for i in range(0,6)].index(g))*(-B)
+
+def p3(g):
+    if g in [r^i for i in range(0,6)]:
+        return (-A)^([r^i for i in range(0,6)].index(g))
+    elif g in [r^i*s for i in range(0,6)]:
+        return (-A)^([r^i*s for i in range(0,6)].index(g))*B
+
+def p4(g):
+    if g in [r^i for i in range(0,6)]:
+        return C^([r^i for i in range(0,6)].index(g))
+    elif g in [r^i*s for i in range(0,6)]:
+        return C^([r^i*s for i in range(0,6)].index(g))*D
+\end{verbatim}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
