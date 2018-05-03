@@ -317,7 +317,18 @@ subspaces that are invariant under the action:
 
   However we can see that $\rho_1$ and $\rho_4$ are equivalent as $A$ and $C$ have the
   same eigenvalues ($e^{i*\pi/3},e^{-i\pi/3}$) and so do matrices $B$ and $D$ ($1,-1$).
-\item[(d)]
+\item[(d)] We used the eigenvectors for the matrices involved in $\rho_1$. Moreover
+  note that the eigenvalues are distinct and the eigenspaces are distinct. This implies
+  that $\rho_1$ is irreducible. We then get that $\rho_4$ is irreducible by equivalence.
+
+  Similarly the eigenvalues for $-A$ are
+  $\left[-\frac{1}{2} i \, \sqrt{3} - \frac{1}{2}, \frac{1}{2} i \, \sqrt{3} - \frac{1}{2}\right]$.
+  Since the eigenvalues for $-A$ and $B$ are distinct and the eigenspaces are
+  distinct we have that $\rho_3$ is irreducible.
+
+  However the eigenvalues for $-B$ are $[-1,1]$ and for $A^3$ they are $[-1,-1]$. Since
+  the eigenvalues are not distinct the eigenspaces also will not. This implies that there
+  is a non-trivial subrepresentation.
 \end{enumerate}
 
 \sk
@@ -350,7 +361,8 @@ This gives us
   3 - (1+1) &= 1
 \end{align*}
 
-Then when we fill in our table we get
+Then we can use the inner product $\langle \chi_1,\chi_5\rangle=0$ to get the signs correct.
+When we fill in our table we get
 
 \[
   \begin{array}{c|ccccc}
@@ -361,7 +373,7 @@ Then when we fill in our table we get
     \chi_2 & 1 & 1 & -1 & -1 & 1\\
     \chi_3 & 3 & -1 & 1 & -1 & 0\\
     \chi_4 & 3 & -1 & -1 & 1 & 0\\
-    \chi_5 & 2 & 2 & 0 & 0 & 1\\
+    \chi_5 & 2 & 2 & 0 & 0 & -1\\
   \end{array}
 \]
 
