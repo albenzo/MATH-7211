@@ -32,6 +32,10 @@
   of $V$.
 \end{problem}
 
+First note that the submodules correspond to subspaces that are invariant
+under the action of $FG$. In this case, due to the transposition, the only
+such subspaces are $\{0\},V$, $\{(\alpha,\alpha)\in V\}$, and $\{(\alpha,\beta)\in V|\alpha+\beta=0\}$.
+
 \sk
 
 \begin{problem}
@@ -39,6 +43,21 @@
   ring $\bb{R}G$ as a direct sum of $\bb{R}G$-submodules, each of which
   is $1$-dimensional over $\bb{R}$.
 \end{problem}
+
+Treat this as a vector space over $\bb{R}$ with basis $(e_1,e_2,e_3,e_4)$ where
+the corresponding representation acts as
+\[
+  \varphi(a)=(e_2,e_1,e_3,e_r),\varphi(b)=(e_1,e_2,e_4,e_3)
+\]
+
+Then we can express this as the direct sum of the four following 1-dimensional
+subspaces that are invariant under the action:
+\begin{itemize}
+\item $\{(xe_1+xe_2)|x\in\bb{R}\}$
+\item $\{(xe_3+xe_4)|x\in\bb{R}\}$
+\item $\{(xe_1+ye_2)|x+y=0\}$
+\item $\{(xe_3+ye_4)|x+y=0\}$
+\end{itemize}
 
 \sk
 
@@ -51,7 +70,7 @@
     \left[
       \begin{array}{cc}
         e^{i\pi/3} & 0\\
-        0 & e^{i\pi/3}\\
+        0 & e^{-i\pi/3}\\
       \end{array}
     \right],
     B
@@ -93,7 +112,213 @@
   \end{enumerate}
 \end{problem}
 
+\begin{enumerate}
+\item[(a)] To show that the $\rho_k$ are representations we will verify that
+  the relations of $D_{12}$ are fulfilled after applying $\rho_k$.
 
+  For $\rho_1$:
+  \[
+    \rho_1(a)^6=
+    \left(
+      \begin{array}{rr}
+        {\left(\frac{1}{2} i \, \sqrt{3} + \frac{1}{2}\right)}^{6} & 0 \\
+        0 & {\left(-\frac{1}{2} i \, \sqrt{3} + \frac{1}{2}\right)}^{6}
+      \end{array}
+    \right)
+    =
+    I_2
+    =
+    \left(
+      \begin{array}{rr}
+        0 & 1 \\
+        1 & 0
+      \end{array}
+    \right)^2
+    =
+    \rho_1(b)^2
+  \]
+
+  \[
+    \rho_1(b)^{-1}\rho_1(a)\rho_1(b)
+    =
+    \left(
+      \begin{array}{rr}
+        0 & 1 \\
+        1 & 0
+      \end{array}
+    \right)
+    \left(
+      \begin{array}{rr}
+        {\left(\frac{1}{2} i \, \sqrt{3} + \frac{1}{2}\right)}^{6} & 0 \\
+        0 & {\left(-\frac{1}{2} i \, \sqrt{3} + \frac{1}{2}\right)}^{6}
+      \end{array}
+    \right)
+    \left(
+      \begin{array}{rr}
+        0 & 1 \\
+        1 & 0
+      \end{array}
+    \right)
+    =
+    \left(
+      \begin{array}{rr}
+        -\frac{1}{2} i \, \sqrt{3} + \frac{1}{2} & 0 \\
+        0 & \frac{1}{2} i \, \sqrt{3} + \frac{1}{2}
+      \end{array}
+    \right)
+  \]
+
+  For $\rho_2$:
+    \[
+    \rho_2(a)^6=
+    \left(\begin{array}{rr}
+{\left(\frac{1}{2} i \, \sqrt{3} + \frac{1}{2}\right)}^{18} & 0 \\
+0 & {\left(-\frac{1}{2} i \, \sqrt{3} + \frac{1}{2}\right)}^{18}
+\end{array}\right)
+    =
+    I_2
+    =
+    \left(
+      \begin{array}{rr}
+        0 & -1 \\
+        -1 & 0
+      \end{array}
+    \right)^2
+    =
+    \rho_2(b)^2
+  \]
+
+  \[\hspace*{-2.4cm}
+    \rho_2(b)^{-1}\rho_2(a)\rho_2(b)
+    =
+    \left(
+      \begin{array}{rr}
+        0 & -1 \\
+        -1 & 0
+      \end{array}
+    \right)
+\left(\begin{array}{rr}
+{\left(\frac{1}{2} i \, \sqrt{3} + \frac{1}{2}\right)}^{3} & 0 \\
+0 & {\left(-\frac{1}{2} i \, \sqrt{3} + \frac{1}{2}\right)}^{3}
+\end{array}\right)
+    \left(
+      \begin{array}{rr}
+        0 & -1 \\
+        -1 & 0
+      \end{array}
+    \right)
+    =
+    \left(\begin{array}{rr}
+{\left(-\frac{1}{2} i \, \sqrt{3} + \frac{1}{2}\right)}^{3} & 0 \\
+0 & {\left(\frac{1}{2} i \, \sqrt{3} + \frac{1}{2}\right)}^{3}
+\end{array}\right)
+  \]
+
+  
+  For $\rho_3$:
+    \[
+      \rho_3(a)^6=
+      \left(\begin{array}{rr}
+{\left(-\frac{1}{2} i \, \sqrt{3} - \frac{1}{2}\right)}^{6} & 0 \\
+0 & {\left(\frac{1}{2} i \, \sqrt{3} - \frac{1}{2}\right)}^{6}
+\end{array}\right)
+    =
+    I_2
+    =
+    \left(
+      \begin{array}{rr}
+        0 & 1 \\
+        1 & 0
+      \end{array}
+    \right)^2
+    =
+    \rho_3(b)^2
+  \]
+
+  \[
+    \rho_3(b)^{-1}\rho_3(a)\rho_3(b)
+    =
+    \left(
+      \begin{array}{rr}
+        0 & 1 \\
+        1 & 0
+      \end{array}
+    \right)
+    \left(\begin{array}{rr}
+-\frac{1}{2} i \, \sqrt{3} - \frac{1}{2} & 0 \\
+0 & \frac{1}{2} i \, \sqrt{3} - \frac{1}{2}
+\end{array}\right)
+    \left(
+      \begin{array}{rr}
+        0 & 1 \\
+        1 & 0
+      \end{array}
+    \right)
+    =
+    \left(\begin{array}{rr}
+\frac{1}{2} i \, \sqrt{3} - \frac{1}{2} & 0 \\
+0 & -\frac{1}{2} i \, \sqrt{3} - \frac{1}{2}
+\end{array}\right)
+  \]
+
+  For $\rho_4$:
+    \[
+    \rho_4(a)^6=
+\left(\begin{array}{rr}
+\frac{1}{2} & \frac{1}{2} \, \sqrt{3} \\
+-\frac{1}{2} \, \sqrt{3} & \frac{1}{2}
+\end{array}\right)^6
+    =
+    I_2
+    =
+    \left(
+      \begin{array}{rr}
+        1 & 0 \\
+        0 & -1
+      \end{array}
+    \right)^2
+    =
+    \rho_4(b)^2
+  \]
+
+  \[
+    \rho_4(b)^{-1}\rho_4(a)\rho_4(b)
+    =
+    \left(
+      \begin{array}{rr}
+        1 & 0 \\
+        0 & -1
+      \end{array}
+    \right)
+    \left(\begin{array}{rr}
+\frac{1}{2} & \frac{1}{2} \, \sqrt{3} \\
+-\frac{1}{2} \, \sqrt{3} & \frac{1}{2}
+\end{array}\right)
+    \left(
+      \begin{array}{rr}
+        1 & 0 \\
+        0 & -1
+      \end{array}
+    \right)
+    =
+    \left(\begin{array}{rr}
+\frac{1}{2} & -\frac{1}{2} \, \sqrt{3} \\
+\frac{1}{2} \, \sqrt{3} & \frac{1}{2}
+\end{array}\right)
+  \]
+
+\item[(b)] We can see that both $\rho_1$ and $\rho_4$ are faithful
+  as the order $A$ and $D$ are both 6. However $\rho_2$ and $\rho_3$
+  are not faithful as the order of $\rho_2(a)$ is $2$ and the order of
+  $\rho_3(a)$ is $3$.
+\item[(c)] To start $\rho_2$ and $\rho_3$ are not equivalent to either of the
+  other two, or each other for that matter, due to the orders of the elements
+  that $a$ is sent to.
+
+  However we can see that $\rho_1$ and $\rho_4$ are equivalent as $A$ and $C$ have the
+  same eigenvalues ($e^{i*\pi/3},e^{-i\pi/3}$) and so do matrices $B$ and $D$ ($1,-1$).
+\item[(d)]
+\end{enumerate}
 
 \sk
 
@@ -112,6 +337,33 @@
     \end{array}
   \]
 \end{problem}
+
+First note that the order of the group is 24. Then using the second
+orthogonality relation from Dummit ($\sum_{i=1}^r\chi_i(x)\overline{\chi_i(y)}$) we
+know what each column with itself should be the size of the centralizer.
+This gives us
+\begin{align*}
+  24 - (1+1+9+9) &= 4\\
+  8 - (1+1+1+1) &= 4\\
+  4 - (1+1+1+1) &= 0\\
+  4 - (1+1+1+1) &= 0\\
+  3 - (1+1) &= 1
+\end{align*}
+
+Then when we fill in our table we get
+
+\[
+  \begin{array}{c|ccccc}
+    \text{Order of the conjugacy class} & (1) & (3) & (6) & (6) & (8)\\
+    \text{Conjugacy class} & Cl(1) & Cl(a) & Cl(b) & Cl(c) & Cl(d)\\
+    \hline
+    \chi_1 & 1 & 1 & 1 & 1 & 1\\
+    \chi_2 & 1 & 1 & -1 & -1 & 1\\
+    \chi_3 & 3 & -1 & 1 & -1 & 0\\
+    \chi_4 & 3 & -1 & -1 & 1 & 0\\
+    \chi_5 & 2 & 2 & 0 & 0 & 1\\
+  \end{array}
+\]
 
 \sk
 
@@ -137,10 +389,19 @@
   \end{enumerate}
 \end{problem}
 
+\begin{enumerate}
+\item[(a)] If we calculate the inner products we get
+  \[
+    \langle \phi,\chi_1\rangle=2, \langle\phi,\chi_2\rangle=1, \langle\phi,\chi_3\rangle=1
+  \]
+\item[(b)] $\phi=2\chi_1+\chi_2+\chi_3$
+\end{enumerate}
 
-Code Storage:
+
+Various bits of code that I used to help get a
+handle on some of this material.
 \begin{verbatim}
-A = Matrix(SR,[[e^(i*pi/3),0],[0,e^(i*pi/3)]])
+A = Matrix(SR,[[e^(i*pi/3),0],[0,e^(-i*pi/3)]])
 B = Matrix(SR,[[0,1],[1,0]])
 C = Matrix(SR,[[1/2,sqrt(3)/2],[-sqrt(3)/2,1/2]])
 D = Matrix(SR,[[1,0],[0,-1]])
@@ -170,6 +431,44 @@ def p4(g):
         return C^([r^i for i in range(0,6)].index(g))
     elif g in [r^i*s for i in range(0,6)]:
         return C^([r^i*s for i in range(0,6)].index(g))*D
+
+def orth1(x1,x2,G):
+    return 1/len(G) * sum([x1(g)*conjugate(x2(g)) for g in G])
+
+def orth2(x,y,Cs):
+    return sum([c(x)*conjugate(c(y)) for c in Cs])
+
+S3 = SymmetricGroup(3)
+cl1 = S3(()).conjugacy_class()
+cl12 = S3((1,2)).conjugacy_class()
+cl123 = S3((1,2,3)).conjugacy_class()
+
+def x1(g):
+    return 1
+
+def x2(g):
+    if g in cl1:
+        return 1
+    if g in cl12:
+        return -1
+    if g in cl123:
+        return 1
+
+def x3(g):
+    if g in cl1:
+        return 2
+    if g in cl12:
+        return 0
+    if g in cl123:
+        return -1
+
+def phi(g):
+    if g in cl1:
+        return 5
+    if g in cl12:
+        return 1
+    if g in cl123:
+        return 2
 \end{verbatim}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
